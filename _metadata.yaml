@@ -1,0 +1,732 @@
+#######################################################################
+### StationXML                                                      ###
+### Ocean Networks Canada, Neptune Observation Seismic Network (NV) ###
+### February 14, 2018                                               ###
+#######################################################################
+
+#Create a top-down nested collection for Neptune (NV):
+"Networks" :
+  "NV" :
+    From : "2009-01-01T00:00:00.000000Z"
+    To : "2599-12-31T23:59:59.999999Z"
+    _description : "Neptune observatory seismographic station sites. Owned and operatred by Ocean Networks Canada (ONC), an initiative of the University of Victoria (UVic)."
+    "Stations" : 
+
+      "CQS64" :
+        From : "2016-07-01T00:00:00.000000Z"
+        To : "2599-12-31T23:59:59.000000Z"
+        _latitude : 48.699900
+        _longitude : -126.872100
+        _elevation : -1323.0 #meters
+        _site : "ODP 1364A"
+        _geology : ""
+        _description : "Station CQS64 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" :
+
+          "2017-06-13T22:32:38.000000Z_2599-12-31T23:59:59.000000Z" :
+            Channels : #channel codes
+
+              "HNE" : &CQS64_TitanEA_Channel #titan
+                _location_code : &CQS64_TitanEA_location "W1"
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _latitude : 48.699853
+                _longitude : -126.872302
+                _elevation : -1315.0 #meters
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : &CQS64_TitanEA_equipment #order should be: [sensor, data_logger]
+                  - "Nanometrics TitanEA (S/N 000145) was deployed at the Clayoquot CORK site and subsequently moved 
+                  to Caisson site with Honeywell Orientation sensor (DeviceID: 23681) and set down right beside site of Caisson. Caisson burial not complete."
+                  - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
+                _equipment_serial : &CQS64_TitanEA_serials #must be same length as description; order should be: [sensor, data_logger]
+                  - "000145"
+                  - "145"
+                _sensor_keys : &TitanEA_sensorKeys
+                  - "Nanometrics"
+                  - "Titan Accelerometer"
+                  - "2g"
+                _datalogger_keys : &TitanEA_dataloggerKeys
+                  - "Nanometrics"
+                  - "Titan SMA"
+                  - "Off"
+                  - "200"
+                _sensor_type : "TitanEA3_5"
+                _dataSearchURL : &CQS64_TitanEA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=CQS64&deviceCategory=ACCELEROMETER"
+                _deviceURL : &CQS64_TitanEA_deviceURL "http://data.oceannetworks.ca/DeviceListing?DeviceId=23454"
+              "HNN" : 
+                <<: *CQS64_TitanEA_Channel #re-use parameters from East channel setup; changing unique characteristics
+                _azimuth : 0
+              "HNZ" :
+                <<: *CQS64_TitanEA_Channel
+                _azimuth : 0
+                _dip : -90
+
+      "ENWF" :
+      "KEMF" :
+      "KEMO" :
+      "NC27" :
+      "NC89" :
+        From : "2009-09-17T13:18:56.000000Z"
+        To : "2599-12-31T23:59:59.000000Z"
+        _latitude : 48.670537
+        _longitude : -126.848767
+        _elevation : -1258.0 #meters
+        _site : "Bullseye (Node ODP1089, BC)"
+        _geology : "Not specified."
+        _description : "Station NC89 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" : #The time interval of instrument settings
+
+          "2017-06-08T19:17:35.000000Z_2599-12-31T23:59:59.000000Z" : 
+            Channels : #channel codes
+
+              "HNE" : &NC89_TitanEA_Channel #titan
+                <<: *CQS64_TitanEA_Channel
+                _sample_rate : 200
+                _latitude : 48.670473
+                _longitude : -126.847701
+                _elevation : -1259.0 #meters
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : &NC89_TitanEA_equipment #order should be: [sensor, data_logger]
+                  - "Nanometrics TitanEA (S/N 000647) is installed at Clayoquot Slope at the Bullseye stationary platform."
+                  - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
+                _equipment_serial : &NC89Bullseye_TitanEA_serials #must be same length as description; order should be: [sensor, data_logger]
+                  - "000647"
+                  - "647"
+                _dataSearchURL : &NC89_TitanEA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NC89&deviceCategory=ACCELEROMETER"
+                _deviceURL : &NC89_TitanEA_deviceURL "http://data.oceannetworks.ca/DeviceListing?DeviceId=24075"
+              "HNN" :
+                <<: *NC89_TitanEA_Channel
+                _azimuth : 0
+              "HNZ" :
+                <<: *NC89_TitanEA_Channel
+                _azimuth : 0
+                _dip : -90
+
+          "2013-03-01T22:31:00.000000Z_2599-12-31T23:59:59.000000Z" :
+            Channels : #channel codes
+
+              "HHE" : &NC89_CMG-1T_Channel #seismometer; 200 sps
+                _location_code : ""
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : &CMG-1T_description #order should be: [sensor, data_logger]
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 50 Hz response."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _equipment_serial : &CMG-1T_serials #must be same length as description; order should be: [sensor, data_logger]
+                  - "T1063"
+                  - "A1717"
+                _sensor_keys : &CMG-1T_sensorKeys
+                  - "Guralp"
+                  - "CMG-1T"
+                  - "360 s - 50 Hz"
+                  - "1500"
+                _datalogger_keys : &CMG-1T_200sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "31-40"
+                  - "38"
+                  - "200"
+                _sensor_type : "CMG-1T"
+                _dataSearchURL : &NC89_BBS_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
+                _deviceURL : &NC89_BBS_deviceURL "http://data.oceannetworks.ca/DataSearch?location=NC89"
+              "HHN" :
+                <<: *NC89_CMG-1T_Channel
+                _azimuth : 0
+              "HHZ" :
+                <<: *NC89_CMG-1T_Channel
+                _azimuth : 0
+                _dip : -90
+
+              "MHE" : &NC89_CMG-1T_Channel_8sps #seismometer; 8 sps
+                <<: *NC89_CMG-1T_Channel
+                _location_code : ""
+                _sample_rate : 8
+                _datalogger_keys : &CMG-1T_8sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "31-40"
+                  - "38"
+                  - "8"
+              "MHN" :
+                <<: *NC89_CMG-1T_Channel_8sps
+                _azimuth : 0
+              "MHZ" :
+                <<: *NC89_CMG-1T_Channel_8sps
+                _azimuth : 0
+                _dip : -90
+
+              "HNE" : &NC89_CMG-5T_Channel #accelerometer; 200 sps
+                _location_code : ""
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : &CMG-5T_description #order should be: [sensor, data_logger]
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sesnor."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _equipment_serial : &CMG-5T_serials #must be same length as description; order should be: [sensor, data_logger]
+                  - "T5O75"
+                  - "A1717"
+                _sensor_keys : &CMG-5T_sensorKeys
+                  - "Guralp"
+                  - "CMG-5"
+                  - "4G_10V"
+                  - "100 Hz"
+                _datalogger_keys : *CMG-1T_200sps_dataloggerKeys #200 sps
+                _sensor_type : "CMG-5T"
+                _dataSearchURL : &NC89_SMA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NC89.W1"
+                _deviceURL : &NC89_SMA_deviceURL "http://data.oceannetworks.ca/DeviceListing?DeviceId=22402"
+              "HNN" :
+                <<: *NC89_CMG-5T_Channel
+                _azimuth : 0
+              "HNZ" :
+                <<: *NC89_CMG-5T_Channel
+                _azimuth : 0
+                _dip : -90
+
+              "MNE" : &NC89_CMG-5T_Channel_8sps #accelerometer; 8 sps
+                <<: *NC89_CMG-5T_Channel
+                _sample_rate : 8
+                _datalogger_keys : *CMG-1T_8sps_dataloggerKeys #8 sps
+              "MNN" :
+                <<: *NC89_CMG-5T_Channel_8sps
+                _azimuth : 0
+              "MNZ" :
+                <<: *NC89_CMG-5T_Channel_8sps
+                _azimuth : 0
+                _dip : -90
+
+          "2010-09-10T22:51:30.000000Z_2013-03-01T22:30:59.000000Z" :
+            Channels : #channel codes
+              "HHE" : &NC89_CMG-1T_Channel_100sps #seismometer; 100 sps
+                <<: *NC89_CMG-1T_Channel
+                _sample_rate : 100
+                _datalogger_keys : &CMG-1T_100sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "41-50"
+                  - "49"
+                  - "100"
+              "HHN" :
+                <<: *NC89_CMG-1T_Channel_100sps
+                _azimuth : 0
+              "HHZ" :
+                <<: *NC89_CMG-1T_Channel_100sps
+                _azimuth : 0
+                _dip : -90
+
+              "MHE" : &NC89_CMG-1T_Channel_1sps #seismometer; 1 sps
+                <<: *NC89_CMG-1T_Channel
+                _sample_rate : 1
+                _datalogger_keys : &CMG-1T_1sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "41-50"
+                  - "49"
+                  - "1"
+              "MHN" :
+                <<: *NC89_CMG-1T_Channel_1sps
+                _azimuth : 0 
+              "MHZ" :
+                <<: *NC89_CMG-1T_Channel_1sps
+                _azimuth : 0
+                _dip : -90
+
+              "HNE" : &NC89_CMG-5T_Channel_100sps #accelerometer; 100 sps
+                <<: *NC89_CMG-5T_Channel
+                _sample_rate : 100
+                _datalogger_keys : *CMG-1T_100sps_dataloggerKeys #100 sps
+              "HNN" :
+                <<: *NC89_CMG-5T_Channel_100sps
+                _azimuth : 0
+              "HNZ" :
+                <<: *NC89_CMG-5T_Channel_100sps
+                _azimuth : 0
+                _dip : -90
+
+              "MNE" : &NC89_CMG-5T_Channel_1sps #accelerometer; 1 sps
+                <<: *NC89_CMG-5T_Channel
+                _sample_rate : 1
+                _datalogger_keys : *CMG-1T_1sps_dataloggerKeys #1 sps
+              "MNN" :
+                <<: *NC89_CMG-5T_Channel_1sps
+                _azimuth : 0
+              "MNZ" :
+                <<: *NC89_CMG-5T_Channel_1sps
+                _azimuth : 0
+                _dip : -90
+
+          "2009-09-17T22:51:30.000000Z_2010-09-10T22:50:15.000000Z" :
+            Channels : #channel codes
+              "HHE" : &NC89_CMG-1T_Channel_100sps_tap24 #seismometer; 100 sps
+                <<: *NC89_CMG-1T_Channel_100sps
+                _datalogger_keys : &CMG-1T_tap24_100sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "21-30"
+                  - "24"
+                  - "100"
+              "HHN" :
+                <<: *NC89_CMG-1T_Channel_100sps_tap24
+                _azimuth : 0
+              "HHZ" :
+                <<: *NC89_CMG-1T_Channel_100sps_tap24
+                _azimuth : 0
+                _dip : -90
+
+              "MHE" : &NC89_CMG-1T_Channel_2sps_tap24 #seismometer; 2 sps
+                <<: *NC89_CMG-1T_Channel_100sps_tap24
+                _sample_rate : 2
+                _datalogger_keys : &CMG-1T_tap24_2sps_dataloggerKeys
+                  - "Guralp"
+                  - "CMG-DM24"
+                  - "Mk3"
+                  - "Fixed"
+                  - "21-30"
+                  - "24"
+                  - "2"
+              "MHN" :
+                <<: *NC89_CMG-1T_Channel_2sps_tap24
+                _azimuth : 0
+              "MHZ" :
+                <<: *NC89_CMG-1T_Channel_2sps_tap24
+                _azimuth : 0
+                _dip : -90
+
+              "HNE" : &NC89_CMG-5T_Channel_100sps_tap24 #accelerometer; 100 sps
+                <<: *NC89_CMG-5T_Channel_100sps
+                _datalogger_keys : *CMG-1T_tap24_100sps_dataloggerKeys #100 sps
+              "HNN" :
+                <<: *NC89_CMG-5T_Channel_100sps_tap24
+                _azimuth : 0
+              "HNZ" :
+                <<: *NC89_CMG-5T_Channel_100sps_tap24
+                _azimuth : 0
+                _dip : -90
+
+              "MNE" : &NC89_CMG-5T_Channel_2sps_tap24 #accelerometer; 2 sps
+                <<: *NC89_CMG-5T_Channel_100sps_tap24
+                _sample_rate : 2
+                _datalogger_keys : *CMG-1T_tap24_2sps_dataloggerKeys #2 sps
+              "MNN" :
+                <<: *NC89_CMG-5T_Channel_2sps_tap24
+                _azimuth : 0
+              "MNZ" :
+                <<: *NC89_CMG-5T_Channel_2sps_tap24
+                _azimuth : 0
+                _dip : -90
+
+      "NCBC" :
+      "NCHR" :
+      "NSMTC" :
+        From : "2017-08-18T00:00:00.000000Z"
+        To : "2599-12-31T23:59:59.000000Z"
+        _latitude : 48.648681
+        _longitude : -123.446181
+        _elevation : -8 #meters
+        _site : "North Saanich Marine Technology Centre"
+        _geology : "Not specified."
+        _description : "Station NSMTC is located at the Marine Technology Centre in North Saanich, owned and operated by Ocean Networks Canada. 
+        The Laurence Berkeley National Laboratory (LBNL) Borehole site is fitted with Geo Space and Silicon Audio sensors installed at -8, -244, -274, -305, -1010 meters depths.
+        Geo Space velocimeters are on the first three channels [1 2 3] of the REFTEK datalogger, and accelerometers are on the last three [4 5 6] channels of the REF TEK datalogger."
+        
+        "Epoch" : #The time interval of instrument settings
+          "2017-08-19T00:00:00.000000Z_2599-12-31T23:59:59.000000Z" :
+            Channels : 
+
+              "CHE": &NSMTC_HS-1-LT_Channel # Geospace HS-1-LT 3C SN 238328 [Velocity]; 500 sps, unity gain
+                _location_code : "G1"
+                _azimuth : 90
+                _dip : 0
+                _depth : -0.6096 #meters
+                _sample_rate : 500
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Geospace HS-1-LT 3C SN 238328. This seismometer collects data from 0.6096 metres below the earth surface."
+                  - "REF TEK datalogger"
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "238328" #device code from WebServices API Oceans 2.0
+                  - "ABA1"
+                _sensor_keys :
+                  - "Geo Space/OYO"
+                  - "HS-1-LT"
+                  - "3810 Ohms"
+                  - "115000 Ohms"
+                _datalogger_keys : &NSRT_1_dataloggerKeys #Unity Gain for surface reftek
+                  - "REF TEK"
+                  - "RT 130 & 130-SMA"
+                  - "1"
+                  - "500"
+                _sensor_type : "GH_HS_1_LT"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22936"
+              "CHN" :
+                <<: *NSMTC_HS-1-LT_Channel
+                _azimuth : 0
+              "CHZ" :
+                <<: *NSMTC_HS-1-LT_Channel
+                _azimuth : 0
+                _dip : -90
+
+          "2017-08-19T00:00:00.000000Z_2017-08-19T23:59:59.000000Z" :
+            Channels :
+
+              "CN2-1" : &NSMTC_SA_ULN_Channel #Silicon Audio Ultra Noise Seismometer SN 0536 [Acceleration]; 500 sps
+                _location_code : "B1"
+                _azimuth : 90
+                _dip : 0
+                _depth : -243.84 #meters
+                _sample_rate :  500
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Silicon Audio Ultra Low Noise Seismometer SN 0536. This seismometer collects data from 243.84 metres below the earth surface."
+                  - "REF TEK datalogger"
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "0536_40Vpg" #device code from WebServices API Oceans 2.0
+                  - "AAB9"
+                _sensor_keys : &NS_SA_sensorKeys #Silicon Audio
+                  - "Silicon Audio"
+                  - "Ultra Low Noise"
+                  - "NOT AVAILABLE ON NRL -- MANUAL"
+                _datalogger_keys : *NSRT_1_dataloggerKeys
+                _sensor_type : "SA_ULN"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.B1"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24046"
+              "CN1-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+              "CNZ-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _dip : -90
+
+              "CN2-2" : &NSMTC_SA_ULN_Channel_B2 # Silicon Audio Ultra Noise Seismometer SN 0537 [Acceleration]; 500 sps
+                <<: *NSMTC_SA_ULN_Channel 
+                _location_code : "B2"
+                _depth : -274.32 #meters
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Silicon Audio Ultra Low Noise Seismometer SN 0537. This seismometer collects data from 274.32 metres below the earth surface."
+                  - "REF TEK datalogger"
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "0537_40Vpg" #device code from WebServices API Oceans 2.0
+                  - "ABB3"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.B2"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24203"
+              "CN1-2" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+              "CNZ-2" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _dip : -90
+
+              "CN2-3" : &NSMTC_SA_ULN_Channel_B3 # Silicon Audio Ultra Noise Seismometer SN 0539 [Acceleration]; 500 sps
+                <<: *NSMTC_SA_ULN_Channel 
+                _location_code : "B3"
+                _depth : -304.8 #meters
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Silicon Audio Ultra Low Noise Seismometer SN 0539. This seismometer collects data from 304.8 metres below the earth surface."
+                  - "REF TEK datalogger"
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "0539_40Vpg" #device code from WebServices API Oceans 2.0
+                  - "B2A2"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.B3"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24202"
+              "CN1-3" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+              "CNZ-3" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _dip : -90
+
+              "CHE" : &NSMTC_GS-11D_Channel # LBNL Custom Geophone with Geospace Technologies GS-11D-3C [Velocity]; 500 sps
+                _location_code : "G2"
+                _azimuth : 90
+                _dip : 0
+                _depth : -307.848 #meters
+                _sample_rate : 500
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "LBNL Custom Geophone with Geospace Technologies GS-11D-3C. This seismometer collects data from 307.848 metres below the earth surface."
+                  - "REF TEK datalogger"
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "3C01" #device code from WebServices API Oceans 2.0
+                  - "B2A2"
+                _sensor_keys :
+                  - "Geo Space/OYO"
+                  - "GS-11D"
+                  - "10 Hz"
+                  - "380 Ohms"
+                  - "1330 Ohms"
+                _datalogger_keys : *NSRT_1_dataloggerKeys
+                _sensor_type : "GS_11D_3"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G2"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22935"
+              "CHN" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+              "CHZ" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _dip : -90
+
+          "2017-08-20T00:00:00.000000Z_2017-08-30T23:59:59.000000Z" : #Dataloggers to 32 gain, SA to 60 V/g
+            Channels : 
+
+              "CN2-1" : 
+                <<: *NSMTC_SA_ULN_Channel
+                _equipment_serial : &SA_B1_ULN_60Vpg_serials
+                  - "0536" 
+                  - "AAB9"
+                _datalogger_keys : &NSRT_32_dataloggerKeys #Unity Gain for surface reftek
+                  - "REF TEK"
+                  - "RT 130 & 130-SMA"
+                  - "32"
+                  - "500"
+              "CN1-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+              "CN2-2" : 
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _equipment_serial : &SA_B2_ULN_60Vpg_serials
+                  - "0537" 
+                  - "ABB3"
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CN1-2" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ-2" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+              "CN2-3" : 
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+                _equipment_serial : &SA_B3_ULN_60Vpg_serials
+                  - "0539" 
+                  - "B2A2"
+              "CN1-3" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ-3" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+              "CHE" : 
+                <<: *NSMTC_GS-11D_Channel
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CHN" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CHZ" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _dip : -90
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+          "2017-08-31T00:00:00.000000Z_2018-01-29T14:59:59.000000Z" : #Borehole refteks to Unity Gain (1)
+            Channels : 
+
+              "CN2-1" : 
+                <<: *NSMTC_SA_ULN_Channel
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+              "CN1-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+              "CNZ-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+
+              "CN2-2" : 
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+              "CN1-2" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+              "CNZ-2" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+
+              "CHE" : 
+                <<: *NSMTC_GS-11D_Channel
+              "CHN" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+              "CHZ" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _dip : -90
+
+          "2017-08-31T00:00:00.000000Z_2018-01-02T11:59:59.000000Z" : #ABB3 to Unity Gain
+            Channels : 
+
+              "CN2" : 
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+              "CN1" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+              "CNZ" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+
+          "2018-01-02T12:00:00.000000Z_2599-12-31T23:59:59.000000Z" : #ABB3 to High Gain (32)
+            Channels : 
+
+              "CN2" : 
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CN1" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ" :
+                <<: *NSMTC_SA_ULN_Channel_B2
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B2_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+          "2018-01-29T15:30:00.000000Z_2599-12-31T23:59:59.000000Z" : #borehole refteks to High Gain (32)
+            Channels : #channel codes
+
+              "CN2-1" : 
+                <<: *NSMTC_SA_ULN_Channel
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CN1-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ-1" :
+                <<: *NSMTC_SA_ULN_Channel
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B1_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+              "CN2-2" : 
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CN1-2" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CNZ-2" :
+                <<: *NSMTC_SA_ULN_Channel_B3
+                _azimuth : 0
+                _dip : -90
+                _equipment_serial : *SA_B3_ULN_60Vpg_serials
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+              "CHE" : 
+                <<: *NSMTC_GS-11D_Channel
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CHN" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+              "CHZ" :
+                <<: *NSMTC_GS-11D_Channel
+                _azimuth : 0
+                _dip : -90
+                _datalogger_keys : *NSRT_32_dataloggerKeys
+
+      "BACME" :
+        From : "2016-06-15T17:25:43.000000Z"
+        To : "2599-12-31T23:59:59.000000Z"
+        _latitude : 48.314654
+        _longitude : -126.058199
+        _elevation : -897.0 #meters
+        _site : "Barkley Canyon MidEast"
+        _geology : ""
+        _description : "Station BACME is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" :
+
+          "2016-06-15T17:25:43.000000Z_2599-12-31T23:59:59.000000Z" :
+            Channels : #channel codes
+
+              "HNE" : &BACME_TitanEA_Channel #titan
+                _location_code : "W1"
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Nanometrics TitanEA (S/N 000143) is installed at Barkley Canyon Mid East."
+                  - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "000143"
+                  - "143"
+                _sensor_keys : *TitanEA_sensorKeys
+                _datalogger_keys : *TitanEA_dataloggerKeys
+                _sensor_type : "TitanEA3_5"
+                _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=BACME.W1&deviceCategory=ACCELEROMETER"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=23452"
+              "HNN" :
+                <<: *BACME_TitanEA_Channel
+                _azimuth : 0
+              "HNZ" :
+                <<: *BACME_TitanEA_Channel
+                _azimuth : 0
+                _dip : -90

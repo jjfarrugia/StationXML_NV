@@ -1,0 +1,151 @@
+#######################################################################
+### Calibrations for making StationXML                              ###
+### Ocean Networks Canada, Neptune Observation Seismic Network (NV) ###
+### February 14, 2018                                               ###
+#######################################################################
+
+Calibrations :
+
+  ############################## SNESORS ##############################
+
+  # Guralp very broadband seismometer
+  "T1063" : #velocity output calibration coefficients (V/m/s)
+    EW : 1434 #east-west
+    NS : 1494 #north-south
+    UD : 1498 #up-down/vertical
+
+  # Guralp strong motion accelerometer
+  "T5O75" : #acceleration response (V/m/s**2)
+    EW : 1.020 #east-west
+    NS : 1.014 #north-south
+    UD : 1.018 #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0536
+  "0536" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0537
+  "0537" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0539
+  "0539" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0536
+  "0536_40Vpg" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0537
+  "0537_40Vpg" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Silicon Audio Ultra Low Noise Seismometer SN 0539
+  "0539_40Vpg" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Geospace HS-1 3C SN 238328
+  "238328" : #velocity
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # LBNL Custom Geophone with Geospace Technologies GS-11D-3C
+  "3C01" : #velocity
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Nanometrics TitanEA3-5 (S/N 000647)
+  "000647" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Nanometrics TitanEA3-5 (S/N 000145)
+  "000145" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Nanometrics TitanEA3-5 (S/N 000143)
+  "000143" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  ############################ DATALOGGERS ############################
+  
+  #REFTEKs !@# Set to "1", because all that is needed is the standard coefficients from NRL.
+  "ABA1" : 
+    "GH_HS_1_LT" : #velocity channels
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "AAB9" : 
+    "SA_ULN" : #acceleration channels
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "ABB3" : 
+    "SA_ULN" : #acceleration channels
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "B2A2" :
+    "SA_ULN" : #acceleration channels
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+    "GS_11D_3" : #velocity channels
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+
+  #Nanometrics Centaurs !@# Set to "1", because all that is needed is the standard coefficients from NRL.
+  "647" :
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "145" :
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "143" :
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+
+  #Guralp
+  "A1717" :
+    "CMG-1T" : #for velocity channels
+      EW : 3.189e-06 #east-west
+      NS : 3.204e-06 #north-south
+      UD : 3.202e-06 #up-down/vertical
+    "CMG-5T" : #for acceleration channels
+      EW : 3.218e-06 #east-west
+      NS : 3.211e-06 #north-south
+      UD : 3.217e-06 #up-down/vertical
+    "MPC - 1sps" : #mass-position-channels
+      EW : 1.131 #east-west
+      NS : 1.132 #north-south
+      UD : 1.138 #up-down/vertical
+    "MPC - 4sps" : 
+      EW : 289.43 #east-west
+      NS : 289.91 #north-south
+      UD : 291.21 #up-down/vertical
