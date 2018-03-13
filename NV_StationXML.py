@@ -172,3 +172,10 @@ print("\n\n###\nInventory: \n", inv)
 # Write the Inventory to StationXML
 print("""\n\nWriting StationXML file to "{}".""".format(os.getcwd()))
 inv.write("NV_ONC.xml", format="stationxml", validate=True)
+
+from obspy.io.stationxml.core import validate_stationxml
+print("\n\nStationXML is valid? {}.".format(validate_stationxml('NV_ONC.xml')[0]))
+if validate_stationxml('NV_ONC.xml')[1] == ():
+    print("\t - No errors were found.")
+else:
+    print("Errors found: {}".format(validate_stationxml('NV_ONC.xml')[1]))
