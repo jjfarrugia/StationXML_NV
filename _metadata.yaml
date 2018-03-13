@@ -8,13 +8,13 @@
 "Networks" :
   "NV" :
     From : "2009-01-01T00:00:00.000000Z"
-    To : "2599-12-31T23:59:59.999999Z"
+    To : "None"
     _description : "Neptune observatory seismographic station sites. Owned and operatred by Ocean Networks Canada (ONC), an initiative of the University of Victoria (UVic)."
     "Stations" : 
 
       "CQS64" :
         From : "2016-07-01T00:00:00.000000Z"
-        To : "2599-12-31T23:59:59.000000Z"
+        To : "None"
         _latitude : 48.699900
         _longitude : -126.872100
         _elevation : -1323.0 #meters
@@ -23,7 +23,7 @@
         _description : "Station CQS64 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" :
 
-          "2017-06-13T22:32:38.000000Z_2599-12-31T23:59:59.000000Z" :
+          "2017-06-13T22:32:38.000000Z_None" :
             Channels : #channel codes
 
               "HNE" : &CQS64_TitanEA_Channel #titan
@@ -70,7 +70,7 @@
       "NC27" :
       "NC89" :
         From : "2009-09-17T13:18:56.000000Z"
-        To : "2599-12-31T23:59:59.000000Z"
+        To : "None"
         _latitude : 48.670537
         _longitude : -126.848767
         _elevation : -1258.0 #meters
@@ -79,7 +79,7 @@
         _description : "Station NC89 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" : #The time interval of instrument settings
 
-          "2017-06-08T19:17:35.000000Z_2599-12-31T23:59:59.000000Z" : 
+          "2017-06-08T19:17:35.000000Z_None" : 
             Channels : #channel codes
 
               "HNE" : &NC89_TitanEA_Channel #titan
@@ -106,7 +106,7 @@
                 _azimuth : 0
                 _dip : -90
 
-          "2013-03-01T22:31:00.000000Z_2599-12-31T23:59:59.000000Z" :
+          "2013-03-01T22:31:00.000000Z_None" :
             Channels : #channel codes
 
               "HHE" : &NC89_CMG-1T_Channel #seismometer; 200 sps
@@ -340,7 +340,7 @@
       "NCHR" :
       "NSMTC" :
         From : "2017-08-18T00:00:00.000000Z"
-        To : "2599-12-31T23:59:59.000000Z"
+        To : "None"
         _latitude : 48.648681
         _longitude : -123.446181
         _elevation : -8 #meters
@@ -351,7 +351,7 @@
         Geo Space velocimeters are on the first three channels [1 2 3] of the REFTEK datalogger, and accelerometers are on the last three [4 5 6] channels of the REF TEK datalogger."
         
         "Epoch" : #The time interval of instrument settings
-          "2017-08-19T00:00:00.000000Z_2599-12-31T23:59:59.000000Z" :
+          "2017-08-19T00:00:00.000000Z_None" :
             Channels : 
 
               "CHE": &NSMTC_HS-1-LT_Channel # Geospace HS-1-LT 3C SN 238328 [Velocity]; 500 sps, unity gain
@@ -623,7 +623,7 @@
                 _dip : -90
                 _equipment_serial : *SA_B2_ULN_60Vpg_serials
 
-          "2018-01-02T12:00:00.000000Z_2599-12-31T23:59:59.000000Z" : #ABB3 to High Gain (32)
+          "2018-01-02T12:00:00.000000Z_None" : #ABB3 to High Gain (32)
             Channels : 
 
               "CN2" : 
@@ -642,7 +642,7 @@
                 _equipment_serial : *SA_B2_ULN_60Vpg_serials
                 _datalogger_keys : *NSRT_32_dataloggerKeys
 
-          "2018-01-29T15:30:00.000000Z_2599-12-31T23:59:59.000000Z" : #borehole refteks to High Gain (32)
+          "2018-01-29T15:30:00.000000Z_None" : #borehole refteks to High Gain (32)
             Channels : #channel codes
 
               "CN2-1" : 
@@ -692,7 +692,7 @@
 
       "BACME" :
         From : "2016-06-15T17:25:43.000000Z"
-        To : "2599-12-31T23:59:59.000000Z"
+        To : "None"
         _latitude : 48.314654
         _longitude : -126.058199
         _elevation : -897.0 #meters
@@ -701,7 +701,7 @@
         _description : "Station BACME is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" :
 
-          "2016-06-15T17:25:43.000000Z_2599-12-31T23:59:59.000000Z" :
+          "2016-06-15T17:25:43.000000Z_None" :
             Channels : #channel codes
 
               "HNE" : &BACME_TitanEA_Channel #titan
