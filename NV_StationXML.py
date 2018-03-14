@@ -13,6 +13,7 @@ from ruamel import yaml
 from datetime import datetime
 from obspy.core.inventory.util import ExternalReference
 import os
+from ast import literal_eval
 
 ############################## SA_ULN Respone #################################
 from obspy import read_inventory
@@ -42,10 +43,16 @@ nrl = NRL()
 Networks = bank['Networks']
 for network in bank['Networks'].keys():
     # Write network to the Inventory
+    _net_end_date = Networks[network]["To"]
+    if _net_end_date == "None":
+        _net_end_date = literal_eval(_net_end_date)
+    else:
+        _net_end_date = obspy.UTCDateTime(_net_end_date)
+        
     _network = Network(
             code = network,
             start_date = obspy.UTCDateTime(Networks[network]["From"]),
-            end_date = obspy.UTCDateTime(Networks[network]["To"]),
+            end_date = _net_end_date,
             description = Networks[network]["_description"]
             )
     inv.networks.append(_network)
@@ -56,6 +63,12 @@ for network in bank['Networks'].keys():
         
         try:
             # Write the station to the Inventory
+            _end_date = Stations[station]["To"]
+            if _end_date == "None":
+                _end_date = literal_eval(_end_date)
+            else:
+                _end_date = obspy.UTCDateTime(_end_date)
+            
             _station = Station(
                     code = station,
                     latitude = Stations[station]["_latitude"],
@@ -63,7 +76,7 @@ for network in bank['Networks'].keys():
                     elevation = Stations[station]["_elevation"], 
                     start_date = obspy.UTCDateTime(Stations[station]["From"]),
                     creation_date = obspy.UTCDateTime(Stations[station]["From"]),
-                    end_date = obspy.UTCDateTime(Stations[station]["To"]),
+                    end_date = _end_date,
                     site = Site(name=Stations[station]["_site"]),
                     geology = Stations[station]["_geology"],
 #                    equipments = obspy.core.inventory.Equipment(description = Stations[station]["_equipments"],
@@ -140,7 +153,13 @@ for network in bank['Networks'].keys():
                             lat = Stations[station]["_latitude"]
                             lon = Stations[station]["_longitude"]
                             elev = Stations[station]["_elevation"]
-                                
+                        
+                        _channel_end_date = epoch.split("_")[1]
+                        if _channel_end_date == "None":
+                            _channel_end_date = literal_eval(_channel_end_date)
+                        else:
+                            _channel_end_date = obspy.UTCDateTime(_channel_end_date)
+                            
                         _channel = Channel(
                                 code = _channel_code,
                                 location_code = Channels[channel]['_location_code'],
@@ -149,12 +168,13 @@ for network in bank['Networks'].keys():
                                 elevation = elev,
                                 depth = Channels[channel]["_depth"],
                                 start_date = obspy.UTCDateTime(epoch.split("_")[0]),
-                                end_date = obspy.UTCDateTime(epoch.split("_")[1]),
+                                end_date = _channel_end_date,
                                 azimuth = Channels[channel]["_azimuth"],
                                 dip = Channels[channel]["_dip"],
                                 types = Channels[channel]["_types"],
                                 sample_rate = Channels[channel]["_sample_rate"],
                                 equipment = obspy.core.inventory.Equipment(description = Channels[channel]["_equipment_description"], serial_number = Channels[channel]["_equipment_serial"]),
+                                sensor = obspy.core.inventory.Equipment(description = Channels[channel]["_sensor_description"], serial_number = Channels[channel]["_equipment_serial"]),
                                 response = _response,
                                 external_references = [ExternalReference(Channels[channel]["_dataSearchURL"], 'Data Search URL.'),
                                                        ExternalReference(Channels[channel]["_deviceURL"], 'Device URL.')]
@@ -162,9 +182,9 @@ for network in bank['Networks'].keys():
                         _station.channels.append(_channel)
                         
                         print("Channel {}.{} appended successfully to Inventory.".format(_channel_code, Channels[channel]['_location_code']))
-                except TypeError:
+                except:
                     print("Check that metadata assignments are correct for station: {}".format(station))
-        except TypeError:
+        except:
             print("No epochs assigned to station: {}".format(station))
             
 print("\n\n###\nInventory: \n", inv)

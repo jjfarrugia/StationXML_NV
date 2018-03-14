@@ -27,7 +27,7 @@
             Channels : #channel codes
 
               "HNE" : &CQS64_TitanEA_Channel #titan
-                _location_code : &CQS64_TitanEA_location "W1"
+                _location_code : "W1"
                 _azimuth : 90
                 _dip : 0
                 _depth : 0
@@ -37,11 +37,11 @@
                 _elevation : -1315.0 #meters
                 _types : 
                   - "GEOPHYSICAL"
-                _equipment_description : &CQS64_TitanEA_equipment #order should be: [sensor, data_logger]
+                _equipment_description : #order should be: [sensor, data_logger]
                   - "Nanometrics TitanEA (S/N 000145) was deployed at the Clayoquot CORK site and subsequently moved 
                   to Caisson site with Honeywell Orientation sensor (DeviceID: 23681) and set down right beside site of Caisson. Caisson burial not complete."
                   - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
-                _equipment_serial : &CQS64_TitanEA_serials #must be same length as description; order should be: [sensor, data_logger]
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
                   - "000145"
                   - "145"
                 _sensor_keys : &TitanEA_sensorKeys
@@ -54,6 +54,7 @@
                   - "Off"
                   - "200"
                 _sensor_type : "TitanEA3_5"
+                _sensor_description : "Nanometrics TitanEA Accelerograph 2g/Built-in datalogger"
                 _dataSearchURL : &CQS64_TitanEA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=CQS64&deviceCategory=ACCELEROMETER"
                 _deviceURL : &CQS64_TitanEA_deviceURL "http://data.oceannetworks.ca/DeviceListing?DeviceId=23454"
               "HNN" : 
@@ -65,9 +66,45 @@
                 _dip : -90
 
       "ENWF" :
+        From : "2016-06-21T00:00:00.000000Z"
+        To : "None"
+        _latitude : 47.959766
+        _longitude : -129.124479
+        _elevation : -2361.0 #meters
+        _site : "Endeavour West Flank"
+        _geology : ""
+        _description : "Station ENWF is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+
       "KEMF" :
+        From : "2010-09-30T00:00:00.000000Z"
+        To : "None"
+        _latitude : 47.948572
+        _longitude : -129.098661
+        _elevation : -2195.0 #meters
+        _site : "Endeavour Main Field"
+        _geology : ""
+        _description : "Station KEMF is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        
       "KEMO" :
+        From : "2016-06-18T00:00:00.000000Z"
+        To : "None"
+        _latitude : 47.9241016667
+        _longitude : -129.1082
+        _elevation : -2270.0 #meters
+        _site : "Mothra Field"
+        _geology : ""
+        _description : "Station KEMO is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        
       "NC27" :
+        From : "2009-09-14T00:00:00.000000Z"
+        To : "None"
+        _latitude : 47.762300
+        _longitude : -127.757900
+        _elevation : -2656.0 #meters
+        _site : "Node ODP1027, BC"
+        _geology : ""
+        _description : "Station NC27 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        
       "NC89" :
         From : "2009-09-17T13:18:56.000000Z"
         To : "None"
@@ -137,6 +174,7 @@
                   - "38"
                   - "200"
                 _sensor_type : "CMG-1T"
+                _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
                 _dataSearchURL : &NC89_BBS_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
                 _deviceURL : &NC89_BBS_deviceURL "http://data.oceannetworks.ca/DataSearch?location=NC89"
               "HHN" :
@@ -188,6 +226,7 @@
                   - "100 Hz"
                 _datalogger_keys : *CMG-1T_200sps_dataloggerKeys #200 sps
                 _sensor_type : "CMG-5T"
+                _sensor_description : "Guralp CMG-5T 4g/Guralp CMG-DM24 Datalogger"
                 _dataSearchURL : &NC89_SMA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NC89.W1"
                 _deviceURL : &NC89_SMA_deviceURL "http://data.oceannetworks.ca/DeviceListing?DeviceId=22402"
               "HNN" :
@@ -276,6 +315,7 @@
 
           "2009-09-17T22:51:30.000000Z_2010-09-10T22:50:15.000000Z" :
             Channels : #channel codes
+
               "HHE" : &NC89_CMG-1T_Channel_100sps_tap24 #seismometer; 100 sps
                 <<: *NC89_CMG-1T_Channel_100sps
                 _datalogger_keys : &CMG-1T_tap24_100sps_dataloggerKeys
@@ -337,7 +377,25 @@
                 _dip : -90
 
       "NCBC" :
+        From : "2009-09-07T00:00:00.000000Z"
+        To : "None"
+        _latitude : 48.427500
+        _longitude : -126.175200
+        _elevation : -398.0 #meters
+        _site : "Barkley Canyon"
+        _geology : ""
+        _description : "Station NCBC is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        
       "NCHR" :
+        From : "2010-10-04T00:00:00.000000Z"
+        To : "None"
+        _latitude : 47.973752
+        _longitude : -129.08209
+        _elevation : -2152.0 #meters
+        _site : "High Rise"
+        _geology : ""
+        _description : "Station NCHR is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        
       "NSMTC" :
         From : "2017-08-18T00:00:00.000000Z"
         To : "None"
@@ -379,6 +437,7 @@
                   - "1"
                   - "500"
                 _sensor_type : "GH_HS_1_LT"
+                _sensor_description : "OYO Geospace HS-1-LT Geophone/Ref Tek 130-01/6 Datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22936"
               "CHN" :
@@ -412,6 +471,7 @@
                   - "NOT AVAILABLE ON NRL -- MANUAL"
                 _datalogger_keys : *NSRT_1_dataloggerKeys
                 _sensor_type : "SA_ULN"
+                _sensor_description : "Silicon Audio Ultra-Low-Noise Seismometer/Ref Tek 130-01/6 Datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.B1"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24046"
               "CN1-1" :
@@ -484,6 +544,7 @@
                   - "1330 Ohms"
                 _datalogger_keys : *NSRT_1_dataloggerKeys
                 _sensor_type : "GS_11D_3"
+                _sensor_description : "Geospace GS-11D-3C Geophone/Ref Tek 130-01/6 Datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G2"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22935"
               "CHN" :
@@ -721,6 +782,7 @@
                 _sensor_keys : *TitanEA_sensorKeys
                 _datalogger_keys : *TitanEA_dataloggerKeys
                 _sensor_type : "TitanEA3_5"
+                _sensor_description : "Nanometrics TitanEA Accelerograph 2g/Built-in datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=BACME.W1&deviceCategory=ACCELEROMETER"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=23452"
               "HNN" :
