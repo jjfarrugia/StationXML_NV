@@ -57,13 +57,13 @@ Calibrations :
     UD : "already_calibrated" #up-down/vertical
 
   # Geospace HS-1 3C SN 238328
-  "238328" : #velocity
+  "480-00010-01" : #velocity
     EW : "already_calibrated" #east-west
     NS : "already_calibrated" #north-south
     UD : "already_calibrated" #up-down/vertical
 
   # LBNL Custom Geophone with Geospace Technologies GS-11D-3C
-  "3C01" : #velocity
+  "93666" : #velocity
     EW : "already_calibrated" #east-west
     NS : "already_calibrated" #north-south
     UD : "already_calibrated" #up-down/vertical
@@ -90,7 +90,7 @@ Calibrations :
   
   #REFTEKs !@# Set to "1", because all that is needed is the standard coefficients from NRL.
   "ABA1" : 
-    "GH_HS_1_LT" : #velocity channels
+    "HS1LT" :
       EW : "already_calibrated" #east-west
       NS : "already_calibrated" #north-south
       UD : "already_calibrated" #up-down/vertical
@@ -109,7 +109,7 @@ Calibrations :
       EW : "already_calibrated" #east-west
       NS : "already_calibrated" #north-south
       UD : "already_calibrated" #up-down/vertical
-    "GS_11D_3" : #velocity channels
+    "GS11D" : #GS_11D_3 part number; velocity channels
       EW : "already_calibrated" #east-west
       NS : "already_calibrated" #north-south
       UD : "already_calibrated" #up-down/vertical

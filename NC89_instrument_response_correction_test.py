@@ -7,7 +7,7 @@ Created on Mon Mar 12 15:10:29 2018
 
 #%% Get some raw data from IRIS to pass through our new stationXML file
 from obspy import read_inventory
-inv = read_inventory('NV_ONC.xml', format="XML")
+inv = read_inventory('NV_ONC.xml', format="STATIONXML")
 plotting_flag = 1
 
 if plotting_flag==1:

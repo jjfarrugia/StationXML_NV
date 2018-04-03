@@ -44,15 +44,8 @@
                 _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
                   - "000145"
                   - "145"
-                _sensor_keys : &TitanEA_sensorKeys
-                  - "Nanometrics"
-                  - "Titan Accelerometer"
-                  - "2g"
-                _datalogger_keys : &TitanEA_dataloggerKeys
-                  - "Nanometrics"
-                  - "Titan SMA"
-                  - "Off"
-                  - "200"
+                _sensor_keys : &TitanEA_sensorKeys "RESP.XX.NS128..BNZ.Titan.DC_430.20V.2G" 
+                _datalogger_keys : &TitanEA_dataloggerKeys "RESP.XX.NN429..HHZ.CENTAUR.1.200.OFF"
                 _sensor_type : "TitanEA3_5"
                 _sensor_description : "Nanometrics TitanEA Accelerograph 2g/Built-in datalogger"
                 _dataSearchURL : &CQS64_TitanEA_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=CQS64&deviceCategory=ACCELEROMETER"
@@ -160,19 +153,8 @@
                 _equipment_serial : &CMG-1T_serials #must be same length as description; order should be: [sensor, data_logger]
                   - "T1063"
                   - "A1717"
-                _sensor_keys : &CMG-1T_sensorKeys
-                  - "Guralp"
-                  - "CMG-1T"
-                  - "360 s - 50 Hz"
-                  - "1500"
-                _datalogger_keys : &CMG-1T_200sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "31-40"
-                  - "38"
-                  - "200"
+                _sensor_keys : &CMG-1T_sensorKeys "RESP.XX.NS004..BHZ.CMG1T.360.1500"
+                _datalogger_keys : &CMG-1T_200sps_dataloggerKeys "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
                 _sensor_type : "CMG-1T"
                 _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
                 _dataSearchURL : &NC89_BBS_dataSearchURL "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
@@ -189,14 +171,7 @@
                 <<: *NC89_CMG-1T_Channel
                 _location_code : ""
                 _sample_rate : 8
-                _datalogger_keys : &CMG-1T_8sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "31-40"
-                  - "38"
-                  - "8"
+                _datalogger_keys : &CMG-1T_8sps_dataloggerKeys "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
               "MHN" :
                 <<: *NC89_CMG-1T_Channel_8sps
                 _azimuth : 0
@@ -219,11 +194,7 @@
                 _equipment_serial : &CMG-5T_serials #must be same length as description; order should be: [sensor, data_logger]
                   - "T5O75"
                   - "A1717"
-                _sensor_keys : &CMG-5T_sensorKeys
-                  - "Guralp"
-                  - "CMG-5"
-                  - "4G_10V"
-                  - "100 Hz"
+                _sensor_keys : &CMG-5T_sensorKeys "RESP.XX.NS049..BNZ.CMG5T.DC_100.4G_10V"
                 _datalogger_keys : *CMG-1T_200sps_dataloggerKeys #200 sps
                 _sensor_type : "CMG-5T"
                 _sensor_description : "Guralp CMG-5T 4g/Guralp CMG-DM24 Datalogger"
@@ -254,14 +225,7 @@
               "HHE" : &NC89_CMG-1T_Channel_100sps #seismometer; 100 sps
                 <<: *NC89_CMG-1T_Channel
                 _sample_rate : 100
-                _datalogger_keys : &CMG-1T_100sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "41-50"
-                  - "49"
-                  - "100"
+                _datalogger_keys : &CMG-1T_100sps_dataloggerKeys "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
               "HHN" :
                 <<: *NC89_CMG-1T_Channel_100sps
                 _azimuth : 0
@@ -273,14 +237,7 @@
               "MHE" : &NC89_CMG-1T_Channel_1sps #seismometer; 1 sps
                 <<: *NC89_CMG-1T_Channel
                 _sample_rate : 1
-                _datalogger_keys : &CMG-1T_1sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "41-50"
-                  - "49"
-                  - "1"
+                _datalogger_keys : &CMG-1T_1sps_dataloggerKeys "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
               "MHN" :
                 <<: *NC89_CMG-1T_Channel_1sps
                 _azimuth : 0 
@@ -318,14 +275,7 @@
 
               "HHE" : &NC89_CMG-1T_Channel_100sps_tap24 #seismometer; 100 sps
                 <<: *NC89_CMG-1T_Channel_100sps
-                _datalogger_keys : &CMG-1T_tap24_100sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "21-30"
-                  - "24"
-                  - "100"
+                _datalogger_keys : &CMG-1T_tap24_100sps_dataloggerKeys "RESP.XX.G0159..HHZ.CMG_DM24_MK3_FIX_24.1.1000_200.100"
               "HHN" :
                 <<: *NC89_CMG-1T_Channel_100sps_tap24
                 _azimuth : 0
@@ -337,14 +287,7 @@
               "MHE" : &NC89_CMG-1T_Channel_2sps_tap24 #seismometer; 2 sps
                 <<: *NC89_CMG-1T_Channel_100sps_tap24
                 _sample_rate : 2
-                _datalogger_keys : &CMG-1T_tap24_2sps_dataloggerKeys
-                  - "Guralp"
-                  - "CMG-DM24"
-                  - "Mk3"
-                  - "Fixed"
-                  - "21-30"
-                  - "24"
-                  - "2"
+                _datalogger_keys : &CMG-1T_tap24_2sps_dataloggerKeys "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
               "MHN" :
                 <<: *NC89_CMG-1T_Channel_2sps_tap24
                 _azimuth : 0
@@ -424,19 +367,11 @@
                   - "Geospace HS-1-LT 3C SN 238328. This seismometer collects data from 0.6096 metres below the earth surface."
                   - "REF TEK datalogger"
                 _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
-                  - "238328" #device code from WebServices API Oceans 2.0
+                  - "480-00010-01" #part number from Geospace
                   - "ABA1"
-                _sensor_keys :
-                  - "Geo Space/OYO"
-                  - "HS-1-LT"
-                  - "3810 Ohms"
-                  - "115000 Ohms"
-                _datalogger_keys : &NSRT_1_dataloggerKeys #Unity Gain for surface reftek
-                  - "REF TEK"
-                  - "RT 130 & 130-SMA"
-                  - "1"
-                  - "500"
-                _sensor_type : "GH_HS_1_LT"
+                _sensor_keys : "RESP.XX.NS520..SLZ.HS1LT.3810.NONE.2.78_7"
+                _datalogger_keys : &NSRT_1_dataloggerKeys "RESP.XX.NR012..HHZ.RT130.1.500" #Unity Gain for surface reftek
+                _sensor_type : "HS1LT"
                 _sensor_description : "OYO Geospace HS-1-LT Geophone/Ref Tek 130-01/6 Datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G1"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22936"
@@ -465,10 +400,7 @@
                 _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
                   - "0536_40Vpg" #device code from WebServices API Oceans 2.0
                   - "AAB9"
-                _sensor_keys : &NS_SA_sensorKeys #Silicon Audio
-                  - "Silicon Audio"
-                  - "Ultra Low Noise"
-                  - "NOT AVAILABLE ON NRL -- MANUAL"
+                _sensor_keys : &NS_SA_sensorKeys "RESP.XX.NS516..BNZ.SAULowNoise.0_005_1000.60_5V.0_5G" #Silicon Audio
                 _datalogger_keys : *NSRT_1_dataloggerKeys
                 _sensor_type : "SA_ULN"
                 _sensor_description : "Silicon Audio Ultra-Low-Noise Seismometer/Ref Tek 130-01/6 Datalogger"
@@ -534,16 +466,11 @@
                   - "LBNL Custom Geophone with Geospace Technologies GS-11D-3C. This seismometer collects data from 307.848 metres below the earth surface."
                   - "REF TEK datalogger"
                 _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
-                  - "3C01" #device code from WebServices API Oceans 2.0
+                  - "93666" #part number from Geospace
                   - "B2A2"
-                _sensor_keys :
-                  - "Geo Space/OYO"
-                  - "GS-11D"
-                  - "10 Hz"
-                  - "380 Ohms"
-                  - "1330 Ohms"
+                _sensor_keys : "RESP.XX.NS518..SHZ.GS11D.8.4000.18000.81_8"
                 _datalogger_keys : *NSRT_1_dataloggerKeys
-                _sensor_type : "GS_11D_3"
+                _sensor_type : "GS11D"
                 _sensor_description : "Geospace GS-11D-3C Geophone/Ref Tek 130-01/6 Datalogger"
                 _dataSearchURL : "http://data.oceannetworks.ca/DataSearch?location=NSMTC.G2"
                 _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=22935"
@@ -563,11 +490,7 @@
                 _equipment_serial : &SA_B1_ULN_60Vpg_serials
                   - "0536" 
                   - "AAB9"
-                _datalogger_keys : &NSRT_32_dataloggerKeys #Unity Gain for surface reftek
-                  - "REF TEK"
-                  - "RT 130 & 130-SMA"
-                  - "32"
-                  - "500"
+                _datalogger_keys : &NSRT_32_dataloggerKeys "RESP.XX.NR012..HHZ.RT130.32.500" #Unity Gain for surface reftek
               "CN1-1" :
                 <<: *NSMTC_SA_ULN_Channel
                 _azimuth : 0

@@ -14,11 +14,23 @@ from datetime import datetime
 from obspy.core.inventory.util import ExternalReference
 import os
 from ast import literal_eval
-
-############################## SA_ULN Respone #################################
 from obspy import read_inventory
-# Load instrument response manually; not available through the IRIS NRL
-SA_ULN_RESP = read_inventory(r'RESP.XX.NS401..BNZ.203_60V.0_5G.txt', format='RESP')[0][0][0].response
+
+# Define functions
+def get_response(_sensor_resp_filename, _dl_resp_filename):
+    #load datalogger RESP file to response object
+    _dl_resp = read_inventory(r'_dataloggerRESP\{}.txt'.format(_dl_resp_filename), format='RESP')[0][0][0].response
+    #load sensor RESP file to response object
+    _sensor_resp = read_inventory(r'_sensorRESP\{}.txt'.format(_sensor_resp_filename), format='RESP')[0][0][0].response
+    _dl_resp.response_stages.pop(0)
+    _dl_resp.response_stages.insert(0, _sensor_resp.response_stages[0])
+    _response = _dl_resp
+    
+    #special condition for SA ULN 40 Vpg
+    if Channels[channel]["_equipment_serial"][0].endswith("40Vpg"):
+             _response.response_stages[4].stage_gain = _response.response_stages[4].stage_gain * float(2/3)
+    
+    return _response
 
 #Import the meta data bank to Python dictionary
 with open(r'_calibrations.yaml', 'r') as file:
@@ -94,25 +106,10 @@ for network in bank['Networks'].keys():
                     Channels = bank['Networks'][network]['Stations'][station]['Epoch'][epoch]['Channels']
                     for channel in Channels.keys():
                         _channel_code = channel.split('-')[0]
-                        #currently we need to manually load in the instruemnt response for Silicon Audio ULN Accelerometer
-                        if Channels[channel]["_sensor_type"] == "SA_ULN":
-                            _dl_resp = nrl.get_datalogger_response(
-                                    datalogger_keys = Channels[channel]['_datalogger_keys']
-                                    )
-                            _sensor_resp = SA_ULN_RESP
-                            _dl_resp.response_stages.pop(0)
-                            _dl_resp.response_stages.insert(0, _sensor_resp.response_stages[0])
-                            _response = _dl_resp
-                            if Channels[channel]["_equipment_serial"][0].endswith("40Vpg"):
-                                 _response.response_stages[4].stage_gain = _response.response_stages[4].stage_gain * float(2/3)
                         
-                        #all other responses can be reached at the IRIS NRL
-                        else:
-                            _response = nrl.get_response(
-                                sensor_keys = Channels[channel]['_sensor_keys'],
-                                datalogger_keys = Channels[channel]['_datalogger_keys']
-                                )
-                        
+                        #build response object from on-board RESP file directories
+                        _response = get_response(Channels[channel]['_sensor_keys'], Channels[channel]['_datalogger_keys'])
+
                         #apply sensor calibrations from manufacturer sheets
                         _sc = calibrations['Calibrations'][Channels[channel]["_equipment_serial"][0]]
                         if (_sc['EW'] and _sc['NS'] and _sc['UD']) != "already_calibrated":
@@ -142,7 +139,6 @@ for network in bank['Networks'].keys():
                         _response.recalculate_overall_sensitivity()
                         
                         # Construct the channel; these are the channel attributes that need to be specified, or left empty "" if not known.
-                        
                         try:
                             #take lat, lon, elev from Channels if it's defined (same station, different Location)
                             lat = Channels[channel]["_latitude"]
