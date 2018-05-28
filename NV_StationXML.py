@@ -24,6 +24,8 @@ def get_response(_sensor_resp_filename, _dl_resp_filename):
     _sensor_resp = read_inventory(r'_sensorRESP\{}.txt'.format(_sensor_resp_filename), format='RESP')[0][0][0].response
     _dl_resp.response_stages.pop(0)
     _dl_resp.response_stages.insert(0, _sensor_resp.response_stages[0])
+    _dl_resp.instrument_sensitivity.input_units = _sensor_resp.instrument_sensitivity.input_units
+    _dl_resp.instrument_sensitivity.input_units_description = _sensor_resp.instrument_sensitivity.input_units_description
     _response = _dl_resp
     
     #special condition for SA ULN 40 Vpg
