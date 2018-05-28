@@ -1,0 +1,174 @@
+#
+###################################################################################
+#
+B050F03     Station:     CQS64
+B050F16     Network:     NV
+B052F03     Location:    B1
+B052F04     Channel:     LHZ
+B052F22     Start date:  2016,183,00:00:00
+B052F23     End date:    2599,365,23:59:59
+#
+#                  +-----------------------------------+
+#                  |    Response (Poles and Zeros)     |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B053F03     Transfer function type:                A
+B053F04     Stage sequence number:                 1
+B053F05     Response in units lookup:              M/S - velocity in meters per second
+B053F06     Response out units lookup:             V - emf in volts
+B053F07     A0 normalization factor:               +9.34265E+17
+B053F08     Normalization frequency:               +3.00000E-02
+B053F09     Number of zeroes:                      6
+B053F14     Number of poles:                       11
+#              Complex zeroes:
+#              i  real          imag          real_error    imag_error
+B053F10-13     0  +0.00000E+00  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F10-13     1  +0.00000E+00  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F10-13     2  -3.16300E+01  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F10-13     3  -1.60000E+02  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F10-13     4  -3.50000E+02  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F10-13     5  -3.17700E+03  +0.00000E+00  +0.00000E+00  +0.00000E+00
+#              Complex poles:
+#              i  real          imag          real_error    imag_error
+B053F15-18     0  -3.66140E-02  +3.70590E-02  +0.00000E+00  +0.00000E+00
+B053F15-18     1  -3.66140E-02  -3.70590E-02  +0.00000E+00  +0.00000E+00
+B053F15-18     2  -3.25500E+01  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F15-18     3  -1.59000E+02  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F15-18     4  -3.64000E+02  +4.04000E+02  +0.00000E+00  +0.00000E+00
+B053F15-18     5  -3.64000E+02  -4.04000E+02  +0.00000E+00  +0.00000E+00
+B053F15-18     6  -1.26000E+03  +0.00000E+00  +0.00000E+00  +0.00000E+00
+B053F15-18     7  -4.90000E+03  +5.20000E+03  +0.00000E+00  +0.00000E+00
+B053F15-18     8  -4.90000E+03  -5.20000E+03  +0.00000E+00  +0.00000E+00
+B053F15-18     9  -7.10000E+03  +1.70000E+03  +0.00000E+00  +0.00000E+00
+B053F15-18    10  -7.10000E+03  -1.70000E+03  +0.00000E+00  +0.00000E+00
+#
+#                  +-----------------------------------+
+#                  |      Channel Sensitivity/Gain     |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B058F03     Stage sequence number:                 1
+B058F04     Sensitivity:                           +1.19686E+03
+B058F05     Frequency of sensitivity:              +3.00000E-02
+B058F06     Number of calibrations:                0
+#
+#                  +-----------------------------------+
+#                  |      Response (Coefficients)      |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B054F03     Transfer function type:                D
+B054F04     Stage sequence number:                 2
+B054F05     Response in units lookup:              V - emf in volts
+B054F06     Response out units lookup:             COUNTS - digital counts
+B054F07     Number of numerators:                  0
+B054F10     Number of denominators:                0
+#
+#                  +-----------------------------------+
+#                  |            Decimation             |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B057F03     Stage sequence number:                  2
+B057F04     Input sample rate (HZ):                 1.0000E+00
+B057F05     Decimation factor:                      00001
+B057F06     Decimation offset:                      00000
+B057F07     Estimated delay (seconds):             +0.0000E+00
+B057F08     Correction applied (seconds):          +0.0000E+00
+#
+#                  +-----------------------------------+
+#                  |      Channel Sensitivity/Gain     |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B058F03     Stage sequence number:                 2
+B058F04     Sensitivity:                           +4.19430E+05
+B058F05     Frequency of sensitivity:              +3.00000E-02
+B058F06     Number of calibrations:                0
+#
+#                  +-----------------------------------+
+#                  |      Response (Coefficients)      |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B054F03     Transfer function type:                D
+B054F04     Stage sequence number:                 3
+B054F05     Response in units lookup:              COUNTS - digital counts
+B054F06     Response out units lookup:             COUNTS - digital counts
+B054F07     Number of numerators:                  31
+B054F10     Number of denominators:                0
+#              Numerator coefficients:
+#              i  coefficient   error
+B054F08-09     0  -1.22004E-16  +0.00000E+00
+B054F08-09     1  +3.37278E-11  +0.00000E+00
+B054F08-09     2  -3.19094E-07  +0.00000E+00
+B054F08-09     3  +1.26313E-06  +0.00000E+00
+B054F08-09     4  -1.48491E-05  +0.00000E+00
+B054F08-09     5  +3.32199E-03  +0.00000E+00
+B054F08-09     6  +1.08323E-03  +0.00000E+00
+B054F08-09     7  -6.24046E-03  +0.00000E+00
+B054F08-09     8  +1.26566E-02  +0.00000E+00
+B054F08-09     9  -1.57663E-02  +0.00000E+00
+B054F08-09    10  +9.56762E-03  +0.00000E+00
+B054F08-09    11  +1.07110E-02  +0.00000E+00
+B054F08-09    12  -4.56425E-02  +0.00000E+00
+B054F08-09    13  +8.97523E-02  +0.00000E+00
+B054F08-09    14  -1.32437E-01  +0.00000E+00
+B054F08-09    15  +1.55289E-01  +0.00000E+00
+B054F08-09    16  +8.12371E-01  +0.00000E+00
+B054F08-09    17  +1.85415E-01  +0.00000E+00
+B054F08-09    18  -1.40609E-01  +0.00000E+00
+B054F08-09    19  +8.97083E-02  +0.00000E+00
+B054F08-09    20  -4.24397E-02  +0.00000E+00
+B054F08-09    21  +7.14001E-03  +0.00000E+00
+B054F08-09    22  +1.21051E-02  +0.00000E+00
+B054F08-09    23  -1.69307E-02  +0.00000E+00
+B054F08-09    24  +1.27735E-02  +0.00000E+00
+B054F08-09    25  -5.86424E-03  +0.00000E+00
+B054F08-09    26  +6.45177E-04  +0.00000E+00
+B054F08-09    27  +3.48713E-03  +0.00000E+00
+B054F08-09    28  -8.53058E-05  +0.00000E+00
+B054F08-09    29  +2.29713E-06  +0.00000E+00
+B054F08-09    30  -2.25830E-07  +0.00000E+00
+#
+#                  +-----------------------------------+
+#                  |            Decimation             |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B057F03     Stage sequence number:                  3
+B057F04     Input sample rate (HZ):                 1.0000E+00
+B057F05     Decimation factor:                      00001
+B057F06     Decimation offset:                      00000
+B057F07     Estimated delay (seconds):             +1.6000E+01
+B057F08     Correction applied (seconds):          +1.6000E+01
+#
+#                  +-----------------------------------+
+#                  |      Channel Sensitivity/Gain     |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B058F03     Stage sequence number:                 3
+B058F04     Sensitivity:                           +1.00000E+00
+B058F05     Frequency of sensitivity:              +3.00000E-02
+B058F06     Number of calibrations:                0
+#
+#                  +-----------------------------------+
+#                  |      Channel Sensitivity/Gain     |
+#                  |        NV  CQS64  B1  LHZ         |
+#                  |     07/01/2016 to 12/31/2599      |
+#                  +-----------------------------------+
+#
+B058F03     Stage sequence number:                 0
+B058F04     Sensitivity:                           +5.01999E+08
+B058F05     Frequency of sensitivity:              +3.00000E-02
+B058F06     Number of calibrations:                0
