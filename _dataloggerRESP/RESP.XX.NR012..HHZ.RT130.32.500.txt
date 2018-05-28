@@ -15,7 +15,7 @@ B052F23     End date:    2999,365,23:59:59.0000
 #		
 B053F03     Transfer function type:                A [Laplace Transform (Rad/sec)]
 B053F04     Stage sequence number:                 1
-B053F05     Response in units lookup:              M/S - Velocity in Meters Per Second
+B053F05     Response in units lookup:              M/S**2 - Acceleration in Meters Per Second Per Second
 B053F06     Response out units lookup:             V - Volts
 B053F07     A0 normalization factor:               1
 B053F08     Normalization frequency:               1
