@@ -30,7 +30,11 @@ def get_response(_sensor_resp_filename, _dl_resp_filename):
     
     #special condition for SA ULN 40 Vpg
     if Channels[channel]["_equipment_serial"][0].endswith("40Vpg"):
-             _response.response_stages[4].stage_gain = _response.response_stages[4].stage_gain * float(2/3)
+        #ensure this change is made to an unused response stage
+        for stage in _response.response_stages:
+            if stage.stage_gain == 1 and stage.input_units == 'COUNTS' and stage.output_units == 'COUNTS':
+                stage.stage_gain = stage.stage_gain * float(2/3)
+                break
     
     return _response
 
@@ -117,7 +121,7 @@ for network in bank['Networks'].keys():
                         if (_sc['EW'] and _sc['NS'] and _sc['UD']) != "already_calibrated":
                         
                             if _channel_code.endswith('E') or _channel_code.endswith('2'):
-                                _sensor_calibs = _sc['EW']
+                                _sensor_calibs = _sc['EW'] #sensor stage gain
                             elif _channel_code.endswith('N') or _channel_code.endswith('1'):
                                 _sensor_calibs = _sc['NS']
                             elif _channel_code.endswith('Z'):
@@ -130,13 +134,16 @@ for network in bank['Networks'].keys():
                         if (_dc['EW'] and _dc['NS'] and _dc['UD']) != "already_calibrated":
                         
                             if _channel_code.endswith('E') or _channel_code.endswith('2'):
-                                _datalogger_calibs = 1/_dc['EW']
+                                _datalogger_calibs = 1/_dc['EW'] #datalogger stage gain
                             elif _channel_code.endswith('N') or _channel_code.endswith('1'):
                                 _datalogger_calibs = 1/_dc['NS']
                             elif _channel_code.endswith('Z'):
                                 _datalogger_calibs = 1/_dc['UD']
                                 
-                            _response.response_stages[2].stage_gain = _datalogger_calibs
+                            #ensure datalogger calibrations are applied to correct response stage
+                            for stage in _response.response_stages:
+                                if stage.input_units == 'V' and stage.output_units == 'COUNTS': #datalogger stage
+                                    _response.response_stages[2].stage_gain = _datalogger_calibs
                             
                         _response.recalculate_overall_sensitivity()
                         
