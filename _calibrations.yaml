@@ -86,6 +86,36 @@ Calibrations :
     NS : "already_calibrated" #north-south
     UD : "already_calibrated" #up-down/vertical
 
+  # Nanometrics Trillium 120s Post-Hole Seismometer
+  "U1364A" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # GEOSense BH-1-15 Corehole Short-Period Seismometer
+  "115" : #velocity
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  # GEOSense BH-1-16 Corehole Short-Period Seismometer
+  "116" : #velocity
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  # GEOSense BH-1-17 Corehole Short-Period Seismometer
+  "117" : #velocity
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  # GEOSense BH-1-18 Corehole Short-Period Seismometer
+  "118" : #velocity
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
   ############################ DATALOGGERS ############################
   
   #REFTEKs !@# Set to "1", because all that is needed is the standard coefficients from NRL.
@@ -131,6 +161,13 @@ Calibrations :
       NS : "already_calibrated" #north-south
       UD : "already_calibrated" #up-down/vertical
 
+  #Nanometrics Quanterra Q330; broadband seismic digitizer
+  "Q330" :
+    "T120PH" : 
+      EW : "already_calibrated"
+      NS : "already_calibrated"
+      UD : "already_calibrated"
+
   #Guralp
   "A1717" :
     "CMG-1T" : #for velocity channels
@@ -149,3 +186,27 @@ Calibrations :
       EW : 289.43 #east-west
       NS : 289.91 #north-south
       UD : 291.21 #up-down/vertical
+
+  "A1349" :
+    "BH-1" : #for velocity channels
+      EW : 3.1978e-06 #east-west
+      NS : 3.1949e-06 #north-south
+      UD : 3.2007e-06 #up-down/vertical
+
+  "A1350" :
+    "BH-1" : #for velocity channels
+      EW : 3.1928e-06 #east-west
+      NS : 3.1765e-06 #north-south
+      UD : 3.1730e-06 #up-down/vertical
+
+  "A1352" :
+    "BH-1" : #for velocity channels
+      EW : 3.1991e-06 #east-west
+      NS : 3.1896e-06 #north-south
+      UD : 3.2179e-06 #up-down/vertical
+
+  "A1325" :
+    "BH-1" : #for velocity channels
+      EW : 3.2005e-06 #east-west
+      NS : 3.2092e-06 #north-south
+      UD : 3.2086e-06 #up-down/vertical

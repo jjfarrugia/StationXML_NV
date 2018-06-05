@@ -21,7 +21,10 @@ def get_response(_sensor_resp_filename, _dl_resp_filename):
     #load datalogger RESP file to response object
     _dl_resp = read_inventory(r'_dataloggerRESP\{}.txt'.format(_dl_resp_filename), format='RESP')[0][0][0].response
     #load sensor RESP file to response object
-    _sensor_resp = read_inventory(r'_sensorRESP\{}.txt'.format(_sensor_resp_filename), format='RESP')[0][0][0].response
+    try: #RESP
+        _sensor_resp = read_inventory(r'_sensorRESP\{}.txt'.format(_sensor_resp_filename), format='RESP')[0][0][0].response
+    except: #XML
+        _sensor_resp = read_inventory(r'_sensorRESP\{}.xml'.format(_sensor_resp_filename), format='STATIONXML')[0][0][0].response
     _dl_resp.response_stages.pop(0)
     _dl_resp.response_stages.insert(0, _sensor_resp.response_stages[0])
     _dl_resp.instrument_sensitivity.input_units = _sensor_resp.instrument_sensitivity.input_units
@@ -187,8 +190,8 @@ for network in bank['Networks'].keys():
                         _station.channels.append(_channel)
                         
                         print("Channel {}.{} appended successfully to Inventory.".format(_channel_code, Channels[channel]['_location_code']))
-                except:
-                    print("Check that metadata assignments are correct for station: {}".format(station))
+                except Exception as e:
+                    print("Check that metadata assignments are correct for station: {}; {}".format(station, e))
         except:
             print("No epochs assigned to station: {}".format(station))
             
