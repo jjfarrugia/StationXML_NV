@@ -401,7 +401,7 @@
                 _types : 
                   - "GEOPHYSICAL"
                 _equipment_description : &CMG-1T_description #order should be: [sensor, data_logger]
-                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 50 Hz response."
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
                   - "CMG-DM24/7 7 channel, 24bit Digitiser."
                 _equipment_serial : &CMG-1T_serials #must be same length as description; order should be: [sensor, data_logger]
                   - "T1063"
@@ -443,7 +443,7 @@
                 _types : 
                   - "GEOPHYSICAL"
                 _equipment_description : &CMG-5T_description #order should be: [sensor, data_logger]
-                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sesnor."
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sensor."
                   - "CMG-DM24/7 7 channel, 24bit Digitiser."
                 _equipment_serial : &CMG-5T_serials #must be same length as description; order should be: [sensor, data_logger]
                   - "T5O75"
@@ -583,6 +583,206 @@
         _site : "Barkley Canyon"
         _geology : ""
         _description : "Station NCBC is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" : 
+
+          "2009-09-07T00:00:00.000000Z_2010-09-11T01:14:00.000000Z" :
+            Channels : #100 and 2 Hz
+
+              "HHE" : &NCBC_T1064_E
+                _location_code : ""
+                _sample_rate : 100
+                _azimuth : 90.7
+                _depth : 0
+                _dip : 0
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_serial : 
+                  - "T1064"
+                  - "A1719"
+                _equipment_description : 
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-1T"
+                _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
+                _sensor_keys : "RESP.XX.NS004..BHZ.CMG1T.360.1500"
+                _datalogger_keys : "RESP.XX.G0159..HHZ.CMG_DM24_MK3_FIX_24.1.1000_200.100"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=13117"
+                _dataSearchURL : "https://data.oceannetworks.ca/DataSearch?location=NCBC&deviceCategory=BBS"
+              
+              "HHN" : &NCBC_T1064_N
+                <<: *NCBC_T1064_E
+                _azimuth : 0.7
+
+              "HHZ" : &NCBC_T1064_Z
+                <<: *NCBC_T1064_N
+                _dip : -90
+
+              "MHE" :
+                <<: *NCBC_T1064_E
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "MHN" :
+                <<: *NCBC_T1064_N
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "MHZ" : 
+                <<: *NCBC_T1064_Z
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "HNE" : &NCBC_T1064_E_ACC
+                <<: *NCBC_T1064_E
+                _equipment_serial : 
+                  - "T5O76"
+                  - "A1719"
+                _equipment_description : 
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sensor."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-5T"
+                _sensor_keys : "RESP.XX.NS049..BNZ.CMG5T.DC_100.4G_10V"
+              
+              "HNN" : &NCBC_T1064_N_ACC
+                <<: *NCBC_T1064_E_ACC
+                _azimuth : 0.7
+
+              "HNZ" : &NCBC_T1064_Z_ACC
+                <<: *NCBC_T1064_N_ACC
+                _dip : -90
+
+              "MNE" : 
+                <<: *NCBC_T1064_E_ACC
+                _sample_rate : 2
+
+              "MNN" :
+                <<: *NCBC_T1064_N_ACC
+                _sample_rate : 2
+
+              "MNZ" : 
+                <<: *NCBC_T1064_Z_ACC
+                _sample_rate : 2
+
+          "2010:09:11T01:15:00.000000Z_2013:03:01T19:59:59.000000Z" : 
+            Channels : #100 and 1 Hz
+
+              "HHE" : 
+                <<: *NCBC_T1064_E
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HHN" :
+                <<: *NCBC_T1064_N
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HHZ" : 
+                <<: *NCBC_T1064_Z
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "LHE" : 
+                <<: *NCBC_T1064_E
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHN" : 
+                <<: *NCBC_T1064_N
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHZ" : 
+                <<: *NCBC_T1064_Z
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "HNE" : 
+                <<: *NCBC_T1064_E_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HNN" : 
+                <<: *NCBC_T1064_N_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HNZ" : 
+                <<: *NCBC_T1064_Z_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "LNE" : 
+                <<: *NCBC_T1064_E_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNN" : 
+                <<: *NCBC_T1064_N_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNZ" : 
+                <<: *NCBC_T1064_Z_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+          "2013:03:01T20:00:00.000000Z_None" : 
+            Channels : #200 and 8 Hz
+
+              "HHE" : 
+                <<: *NCBC_T1064_E
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HHN" :
+                <<: *NCBC_T1064_N
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HHZ" :
+                <<: *NCBC_T1064_Z
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "MHE" : 
+                <<: *NCBC_T1064_E
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+              
+              "MHN" : 
+                <<: *NCBC_T1064_N
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHZ" : 
+                <<: *NCBC_T1064_Z
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "HNE" :
+                <<: *NCBC_T1064_E_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+              
+              "HNN" :
+                <<: *NCBC_T1064_N_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HNZ" :
+                <<: *NCBC_T1064_Z_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "MNE" :
+                <<: *NCBC_T1064_E_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNN" :
+                <<: *NCBC_T1064_N_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNZ" :
+                <<: *NCBC_T1064_Z_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
         
       "NCHR" :
         From : "2010-10-04T00:00:00.000000Z"
@@ -1103,7 +1303,7 @@
                 <<: *NSMTC_GS-11D_Channel
                 _azimuth : 327
                 _dip : -90
-                _datalogger_keys : *NSRT_32_dataloggerKeys
+                _datalogger_keys : *NSRT_32_dataloggerKeys 
 
       "BACME" :
         From : "2016-06-15T17:25:43.000000Z"
@@ -1146,4 +1346,4 @@
               "HNZ" :
                 <<: *BACME_TitanEA_Channel
                 _azimuth : 0
-                _dip : -90
+                _dip : -90 
