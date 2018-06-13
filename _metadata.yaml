@@ -116,6 +116,88 @@
         _site : "Endeavour West Flank"
         _geology : ""
         _description : "Station ENWF is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" : 
+
+          "2016-06-21T00:00:00.000000Z_None" : 
+            Channels :
+
+              "HHE" : &ENWF_T1065_E
+                _location_code : ""
+                _sample_rate : 200
+                _azimuth : 90
+                _depth : 0
+                _dip : 0
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_serial : 
+                  - "T1065"
+                  - "A2260"
+                _equipment_description : 
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-1T"
+                _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
+                _sensor_keys : "RESP.XX.NS004..BHZ.CMG1T.360.1500"
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=11057"
+                _dataSearchURL : "https://data.oceannetworks.ca/DataSearch?location=ENWF&deviceCategory=BBS"
+
+              "HHN" : &ENWF_T1065_N
+                <<: *ENWF_T1065_E
+                _azimuth : 0
+
+              "HHZ" : &ENWF_T1065_Z
+                <<: *ENWF_T1065_N
+                _dip : -90
+
+              "HNE" : &ENWF_T5S27_E_ACC
+                <<: *ENWF_T1065_E
+                _equipment_serial : 
+                  - "T5S27"
+                  - "A2260"
+                _equipment_description : 
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sensor."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-5T"
+                _sensor_keys : "RESP.XX.NS049..BNZ.CMG5T.DC_100.4G_10V"
+
+              "HNN" : &ENWF_T5S27_N_ACC
+                <<: *ENWF_T5S27_E_ACC
+                _azimuth : 0
+
+              "HNZ" : &ENWF_T5S27_Z_ACC
+                <<: *ENWF_T5S27_N_ACC
+                _dip : -90
+
+              "MHE" : 
+                <<: *ENWF_T1065_E
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHN" : 
+                <<: *ENWF_T1065_N
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHZ" : 
+                <<: *ENWF_T1065_Z 
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNE" : 
+                <<: *ENWF_T5S27_E_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNN" : 
+                <<: *ENWF_T5S27_N_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNZ" : 
+                <<: *ENWF_T5S27_Z_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
 
       "KEMF" :
         From : "2010-09-30T00:00:00.000000Z"
@@ -348,6 +430,397 @@
         _site : "Node ODP1027, BC"
         _geology : ""
         _description : "Station NC27 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
+        "Epoch" :
+
+          "2009-09-14T00:00:00.000000Z_2010-06-10T17:42:59.000000Z" :
+            Channels : #100 and 2 Hz
+
+              "HHE" : &NC27_T1067_E
+                _location_code : ""
+                _sample_rate : 100
+                _azimuth : 94.20
+                _depth : 0
+                _dip : 0
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_serial : 
+                  - "T1067"
+                  - "A1716"
+                _equipment_description : 
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-1T"
+                _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
+                _sensor_keys : "RESP.XX.NS004..BHZ.CMG1T.360.1500"
+                _datalogger_keys : "RESP.XX.G0159..HHZ.CMG_DM24_MK3_FIX_24.1.1000_200.100"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=13117"
+                _dataSearchURL : "https://data.oceannetworks.ca/DataSearch?location=NCBC&deviceCategory=BBS"
+              
+              "HHN" : &NC27_T1067_N
+                <<: *NC27_T1067_E
+                _azimuth : 4.20
+
+              "HHZ" : &NC27_T1067_Z
+                <<: *NC27_T1067_N
+                _dip : -90
+
+              "MHE" :
+                <<: *NC27_T1067_E
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "MHN" :
+                <<: *NC27_T1067_N
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "MHZ" : 
+                <<: *NC27_T1067_Z
+                _sample_rate : 2
+                _datalogger_keys : "RESP.XX.G0316..MHZ.CMG_DM24_MK3_FIX_24.1.1000_200_100_20_10.2"
+
+              "HNE" : &NC27_T5O77_E_ACC
+                <<: *NC27_T1067_E
+                _equipment_serial : 
+                  - "T5O77"
+                  - "A1716"
+                _equipment_description : 
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sensor."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-5T"
+                _sensor_keys : "RESP.XX.NS049..BNZ.CMG5T.DC_100.4G_10V"
+              
+              "HNN" : &NC27_T5O77_N_ACC
+                <<: *NC27_T5O77_E_ACC
+                _azimuth : 4.20
+
+              "HNZ" : &NC27_T5O77_Z_ACC
+                <<: *NC27_T5O77_N_ACC
+                _dip : -90
+
+              "MNE" : 
+                <<: *NC27_T5O77_E_ACC
+                _sample_rate : 2
+
+              "MNN" :
+                <<: *NC27_T5O77_N_ACC
+                _sample_rate : 2
+
+              "MNZ" : 
+                <<: *NC27_T5O77_Z_ACC
+                _sample_rate : 2
+
+          "2010-06-10T17:43:00.000000Z_2010-10-05T23:59:59.000000Z" :
+            Channels : 
+
+              "HHE" : 
+                <<: *NC27_T1067_E
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HHN" : 
+                <<: *NC27_T1067_N
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HHZ" : 
+                <<: *NC27_T1067_Z
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "LHE" : 
+                <<: *NC27_T1067_E
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHN" : 
+                <<: *NC27_T1067_N
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHZ" : 
+                <<: *NC27_T1067_Z
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "HNE" : 
+                <<: *NC27_T5O77_E_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HNN" : 
+                <<: *NC27_T5O77_N_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "HNZ" :
+                <<: *NC27_T5O77_Z_ACC
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+
+              "LNE" : 
+                <<: *NC27_T5O77_E_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNN" : 
+                <<: *NC27_T5O77_N_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNZ" : 
+                <<: *NC27_T5O77_Z_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+          "2010-10-06T00:00:00.000000Z_2013-03-01T19:59:59.000000Z" :
+            Channels : 
+
+              "HHE" : &NC27_T1065_E
+                _location_code : ""
+                _sample_rate : 100
+                _azimuth : 89.8
+                _depth : 0
+                _dip : 0
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_serial : 
+                  - "T1065"
+                  - "A2260"
+                _equipment_description : 
+                  - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-1T"
+                _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
+                _sensor_keys : "RESP.XX.NS004..BHZ.CMG1T.360.1500"
+                _datalogger_keys : "RESP.XX.G0150..HHZ.CMG_DM24_MK3_FIX_49.1.500.100"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=11057"
+                _dataSearchURL : "https://data.oceannetworks.ca/DataSearch?location=ENWF&deviceCategory=BBS"
+
+              "HHN" : &NC27_T1065_N
+                <<: *NC27_T1065_E
+                _azimuth : 359.8
+
+              "HHZ" : &NC27_T1065_Z
+                <<: *NC27_T1065_N
+                _dip : -90
+
+              "HNE" : &NC27_T5S27_E_ACC
+                <<: *NC27_T1065_E
+                _equipment_serial : 
+                  - "T5S27"
+                  - "A2260"
+                _equipment_description : 
+                  - "CMG-5T Strong motion sensor fixed within the same titanium housing as the Broadband Sensor."
+                  - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _sensor_type : "CMG-5T"
+                _sensor_keys : "RESP.XX.NS049..BNZ.CMG5T.DC_100.4G_10V"
+
+              "HNN" : &NC27_T5S27_N_ACC
+                <<: *NC27_T5S27_E_ACC
+                _azimuth : 0
+
+              "HNZ" : &NC27_T5S27_Z_ACC
+                <<: *NC27_T5S27_N_ACC
+                _dip : -90
+
+              "LHE" : 
+                <<: *NC27_T1065_E
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHN" : 
+                <<: *NC27_T1065_N
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LHZ" : 
+                <<: *NC27_T1065_Z 
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNE" : 
+                <<: *NC27_T5S27_E_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNN" : 
+                <<: *NC27_T5S27_N_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+              "LNZ" : 
+                <<: *NC27_T5S27_Z_ACC
+                _sample_rate : 1
+                _datalogger_keys : "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
+
+          "2013-03-01T20:00:00.000000Z_2014-05-21T23:59:59.000000Z" : 
+            Channels : 
+
+              "HHE" : 
+                <<: *NC27_T1065_E
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HHN" : 
+                <<: *NC27_T1065_N
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HHZ" : 
+                <<: *NC27_T1065_Z
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HNE" : 
+                <<: *NC27_T5S27_E_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HNN" : 
+                <<: *NC27_T5S27_N_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "HNZ" : 
+                <<: *NC27_T5S27_Z_ACC
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+
+              "MHE" : 
+                <<: *NC27_T1065_E
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHN" : 
+                <<: *NC27_T1065_N
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHZ" : 
+                <<: *NC27_T1065_Z 
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNE" : 
+                <<: *NC27_T5S27_E_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNN" : 
+                <<: *NC27_T5S27_N_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MNZ" : 
+                <<: *NC27_T5S27_Z_ACC
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+          "2014-05-22T00:00:00.000000Z_None" : 
+            Channels : 
+
+              "HHE" : 
+                <<: *NC27_T1067_E
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 87
+
+              "HHN" : 
+                <<: *NC27_T1067_N
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 357
+
+              "HHZ" : 
+                <<: *NC27_T1067_Z
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 357
+
+              "HNE" : 
+                <<: *NC27_T5O77_E_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 87
+
+              "HNN" : 
+                <<: *NC27_T5O77_N_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 357
+
+              "HNZ" : 
+                <<: *NC27_T5O77_Z_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 200
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
+                _azimuth : 357
+
+              "MHE" : 
+                <<: *NC27_T1067_E
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 87
+
+              "MHN" : 
+                <<: *NC27_T1067_N
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 357
+
+              "MHZ" : 
+                <<: *NC27_T1067_Z
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 357
+
+              "MNE" : 
+                <<: *NC27_T5O77_E_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 87
+
+              "MNN" : 
+                <<: *NC27_T5O77_N_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 357
+
+              "MNZ" : 
+                <<: *NC27_T5O77_Z_ACC
+                _latitude : 47.76258
+                _longitude : -127.758102
+                _elevation : -2656
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+                _azimuth : 357
         
       "NC89" :
         From : "2009-09-17T13:18:56.000000Z"
@@ -489,14 +962,14 @@
                 _azimuth : 12
                 _dip : -90
 
-              "MHE" : &NC89_CMG-1T_Channel_1sps #seismometer; 1 sps
+              "LHE" : &NC89_CMG-1T_Channel_1sps #seismometer; 1 sps
                 <<: *NC89_CMG-1T_Channel
                 _sample_rate : 1
                 _datalogger_keys : &CMG-1T_1sps_dataloggerKeys "RESP.XX.G0341..LHZ.CMG_DM24_MK3_FIX_49.1.500_100_20_10_2.1"
-              "MHN" :
+              "LHN" :
                 <<: *NC89_CMG-1T_Channel_1sps
                 _azimuth : 12 
-              "MHZ" :
+              "LHZ" :
                 <<: *NC89_CMG-1T_Channel_1sps
                 _azimuth : 12
                 _dip : -90
@@ -513,14 +986,14 @@
                 _azimuth : 12
                 _dip : -90
 
-              "MNE" : &NC89_CMG-5T_Channel_1sps #accelerometer; 1 sps
+              "LNE" : &NC89_CMG-5T_Channel_1sps #accelerometer; 1 sps
                 <<: *NC89_CMG-5T_Channel
                 _sample_rate : 1
                 _datalogger_keys : *CMG-1T_1sps_dataloggerKeys #1 sps
-              "MNN" :
+              "LNN" :
                 <<: *NC89_CMG-5T_Channel_1sps
                 _azimuth : 12
-              "MNZ" :
+              "LNZ" :
                 <<: *NC89_CMG-5T_Channel_1sps
                 _azimuth : 12
                 _dip : -90
@@ -783,7 +1256,6 @@
                 _sample_rate : 8
                 _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
 
-        
       "NCHR" :
         From : "2010-10-04T00:00:00.000000Z"
         To : "None"

@@ -21,6 +21,28 @@ Calibrations :
     UD : 1.018 #up-down/vertical
 
   # Guralp very broadband seismometer
+  "T1067" : #velocity output calibration coefficients (V/m/s)
+    EW : 1482 
+    NS : 1494 
+    UD : 1484 
+
+  # Guralp strong motion accelerometer
+  "T5O77" : #acceleration response (V/m/s**2)
+    EW : 1.028
+    NS : 1.024
+    UD : 1.028
+
+  "T1065" : #velocity output calibration coefficients (V/m/s)
+    EW : 1506
+    NS : 1490
+    UD : 1492
+
+  "T5S27" : #acceleration response (V/m/s^2)
+    EW : 1.016
+    NS : 1.018
+    UD : 1.018
+
+  # Guralp very broadband seismometer
   "T1064" : #velocity output calibration coefficients (V/m/s)
     EW : 1488
     NS : 1496
@@ -181,6 +203,25 @@ Calibrations :
       UD : "already_calibrated"
 
   #Guralp
+  "A1716" :
+    "CMG-1T" : #for velocity channels
+      EW : 3.187e-06 #east-west
+      NS : 3.188e-06 #north-south
+      UD : 3.191e-06 #up-down/vertical
+    "CMG-5T" : #for acceleration channels
+      EW : 3.191e-06 #east-west
+      NS : 3.2e-06 #north-south
+      UD : 3.201e-06 #up-down/vertical
+    "MPC_1sps" : #mass-position-channels
+      EW : 1.137e-06 #east-west
+      NS : 1.131e-06 #north-south
+      UD : 1.137e-06 #up-down/vertical
+    "MPC_4sps" : 
+      EW : 290.96e-06 #east-west
+      NS : 289.58e-06 #north-south
+      UD : 288.84e-06 #up-down/vertical
+
+  #Guralp
   "A1717" :
     "CMG-1T" : #for velocity channels
       EW : 3.189e-06 #east-west
@@ -216,6 +257,24 @@ Calibrations :
       EW : 291.36e-06 
       NS : 289.63e-06
       UD : 290.88e-06
+
+  "A2260" : # three velocity channels
+    "CMG-1T" :
+      EW : 3.196e-06 
+      NS : 3.211e-06
+      UD : 3.208e-06
+    "CMG-5T" : 
+      EW : 3.218e-06 
+      NS : 3.209e-06 
+      UD : 3.215e-06 
+    "MPC_1sps" : 
+      EW : 2.277e-06 
+      NS : 2.277e-06 
+      UD : 2.277e-06  
+    "MPC_4sps" : #acceleration?
+      EW : 290.860e-06 
+      NS : 291.500e-06 
+      UD : 291.478e-06 
 
   "A1349" :
     "BH-1" : #for velocity channels
