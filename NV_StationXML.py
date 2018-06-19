@@ -19,7 +19,10 @@ from obspy import read_inventory
 # Define functions
 def get_response(_sensor_resp_filename, _dl_resp_filename):
     #load datalogger RESP file to response object
-    _dl_resp = read_inventory(r'_dataloggerRESP\{}.txt'.format(_dl_resp_filename), format='RESP')[0][0][0].response
+    try:
+        _dl_resp = read_inventory(r'_dataloggerRESP\{}.txt'.format(_dl_resp_filename), format='RESP')[0][0][0].response
+    except:
+        _dl_resp = read_inventory(r'_dataloggerRESP\{}.xml'.format(_dl_resp_filename), format='STATIONXML')[0][0][0].response
     #load sensor RESP file to response object
     try: #RESP
         _sensor_resp = read_inventory(r'_sensorRESP\{}.txt'.format(_sensor_resp_filename), format='RESP')[0][0][0].response

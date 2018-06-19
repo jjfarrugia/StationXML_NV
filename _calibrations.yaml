@@ -54,6 +54,26 @@ Calibrations :
     NS : 1.020
     UD : 1.024
 
+  "TR1181" : #KEMF.W1
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  "TR1182" : #KEMF.W2 
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  "TR1183" : #KEMF.W3
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
+  "TR1160" : #Autonomous - ENHR.W1 
+    EW : "already_calibrated"
+    NS : "already_calibrated"
+    UD : "already_calibrated"
+
   # Silicon Audio Ultra Low Noise Seismometer SN 0536
   "0536" : #acceleration
     EW : "already_calibrated" #east-west
@@ -299,3 +319,9 @@ Calibrations :
       EW : 3.2005e-06 #east-west
       NS : 3.2092e-06 #north-south
       UD : 3.2086e-06 #up-down/vertical
+
+  "E055" : 
+    "RADIAN" : 
+      EW : "already_calibrated"
+      NS : "already_calibrated"
+      UD : "already_calibrated"
