@@ -134,7 +134,7 @@
                   - "GEOPHYSICAL"
                 _equipment_serial : 
                   - "TR1160" #accelerometer
-                  - "E055" #digitizer
+                  - "E056" #digitizer
                 _equipment_description : 
                   - "Triaxial orthogonal broadband instrument with acceleration response flat between 120 seconds and 200 Hz, and an internal MEMS accelerometer and magnetometer."
                   - 24-bit digitiser contained within the same robust 55 mm diameter stainless steel casing as triaxial seismometer.
@@ -144,7 +144,7 @@
                 _sensor_keys : "StationXMLInventory.ENHR..HHE"
                 _datalogger_keys : "StationXMLInventory.ENHR..HHE"
                 _dataSearchURL : "None"
-                _deviceURL : "None"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=14057"
 
               "HHN" : &TR1160_N
                 <<: *TR1160_E
@@ -234,12 +234,12 @@
                 _dip : 0
                 _types : 
                   - "GEOPHYSICAL"
-                _equipment_serial : 
-                  - "T1065"
-                  - "A2260"
                 _equipment_description : 
                   - "CMG-1T very Broadband Ocean Bottom Sensor with three independent sensors; 360 sec to 100 Hz response."
                   - "CMG-DM24/7 7 channel, 24bit Digitiser."
+                _equipment_serial : 
+                  - "T1065"
+                  - "A2260"
                 _sensor_type : "CMG-1T"
                 _sensor_description : "Guralp CMG-1T 360s/Guralp CMG-DM24 Datalogger"
                 _sensor_keys : "RESP.XX.NS004..BHZ.CMG1T.360.1500"
@@ -315,6 +315,62 @@
         _description : "Station ENEF is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" : 
 
+          "2018-06-19T00:00:00.000000Z_None" : 
+            Channels : 
+
+              "EHE" : &ENEF_GEOSenseBH1_118
+                _location_code : ""
+                _sample_rate : 200
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _types :
+                  - "GEOPHYSICAL"
+                _equipment_description :
+                  - "GeoSENSE BH-1-18 (S/N 118) Corehole Seismometer - Short Period Responsivitiy from 1 Hz to 200 Hz"
+                  - "Guralp DM24-MK3 Datalogger" 
+                _equipment_serial : 
+                  - "118" #S/N sensor
+                  - "A1352" #S/N datalogger
+                _sensor_keys : "NCHR.EHE.118"
+                _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200" #same datalogger as for BBSs (e.g., NC89)
+                _sensor_type : "BH-1"
+                _sensor_description : "GeoSENSE BH-1 Corehole Seismometer/Guralp DM24-MK3 Datalogger"
+                _dataSearchURL : "None"
+                _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=13057"
+                _calibration_units : "UNKNOWN"
+
+              "EHN" : 
+                <<: *ENEF_GEOSenseBH1_118
+                _azimuth : 0
+                _sensor_keys : "NCHR.EHN.118"
+              
+              "EHZ" :
+                <<: *ENEF_GEOSenseBH1_118
+                _azimuth : 0
+                _dip : -90
+                _sensor_keys : "NCHR.EHZ.118"
+
+              "MHE" : 
+                <<: *ENEF_GEOSenseBH1_118
+                _sample_rate : 8
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHN" :
+                <<: *ENEF_GEOSenseBH1_118
+                _sample_rate : 8
+                _azimuth : 0
+                _sensor_keys : "NCHR.EHN.118"
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
+              "MHZ" :
+                <<: *ENEF_GEOSenseBH1_118
+                _sample_rate : 8
+                _azimuth : 0
+                _dip : -90
+                _sensor_keys : "NCHR.EHZ.118"
+                _datalogger_keys : "RESP.XX.G0190..MHZ.CMG_DM24_MK3_FIX_38.1.1000_200_40.8"
+
       "KEMF" :
         From : "2010-09-30T00:00:00.000000Z"
         To : "None"
@@ -347,8 +403,7 @@
                   - "Triaxial orthogonal broadband instrument with acceleration response flat between 120 seconds and 200 Hz, and an internal MEMS accelerometer and magnetometer."
                   - 24-bit digitiser contained within the same robust 55 mm diameter stainless steel casing as triaxial seismometer.
                 _sensor_type : "RADIAN"
-                _sensor_description : 
-                  - "Güralp Radian/24-bit built-in digitiser"
+                _sensor_description : "Güralp Radian/24-bit built-in digitiser"
                 _sensor_keys : "StationXMLInventory.KEMF.W1.CNE"
                 _datalogger_keys : "StationXMLInventory.KEMF.W1.CNE"
                 _dataSearchURL : "None"
@@ -682,7 +737,7 @@
 
               "EHE" : &KEMF_GEOSenseBH1_117
                 <<: *KEMF_GEOSenseBH1_116
-                _azimuth : 130
+                _azimuth : 310
                 _equipment_description :
                   - "GeoSENSE BH-1-17 (S/N 117) Corehole Seismometer - Short Period Responsivitiy from 1 Hz to 200 Hz"
                   - "Guralp DM24-MK3 Datalogger" 
@@ -1231,12 +1286,12 @@
                 _azimuth : 357
         
       "NC89" :
-        From : "2009-09-17T13:18:56.000000Z"
+        From : "2009-09-17T00:00:00.000000Z"
         To : "None"
         _latitude : 48.670537
         _longitude : -126.848767
         _elevation : -1258.0 #meters
-        _site : "Calyoquot Slope - Bullseye (Node ODP1089)"
+        _site : "Clayoquot Slope - Bullseye (Node ODP1089)"
         _geology : "Not specified."
         _description : "Station NC89 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" : #The time interval of instrument settings
@@ -1684,7 +1739,7 @@
                 _latitude : 47.973752
                 _longitude : -129.08209
                 _elevation : -2152.0
-                _azimuth : 201
+                _azimuth : 21
                 _datalogger_keys : "RESP.XX.G0148..HHZ.CMG_DM24_MK3_FIX_38.1.1000.200"
                 _dataSearchURL : "https://data.oceannetworks.ca/DataSearch?location=NCHR&deviceCategory=SPS"
                 _deviceURL : "https://data.oceannetworks.ca/DeviceListing?DeviceId=16001"
@@ -1732,7 +1787,7 @@
                 _latitude : 47.9736733333
                 longitude : -129.0819516667
                 _elevation : -2154.0
-                _azimuth : 19
+                _azimuth : 199
                 _sensor_keys : "NCHR.EHE.118"
                 _equipment_description :
                   - "GeoSENSE BH-1-18 (S/N 118) Corehole Seismometer - Short Period Responsivitiy from 1 Hz to 200 Hz"
@@ -1778,7 +1833,7 @@
 
               "EHE" : &NCHR_GEOSenseBH1_116
                 <<: *NCHR_GEOSenseBH1_118
-                _azimuth : 20.5
+                _azimuth : 200.5
                 _sensor_keys : "KEMF.EHE.116"
                 _equipment_description :
                   - "GeoSENSE BH-1-16 (S/N 116) Corehole Seismometer - Short Period Responsivitiy from 1 Hz to 200 Hz"

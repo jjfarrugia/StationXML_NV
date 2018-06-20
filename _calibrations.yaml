@@ -325,3 +325,9 @@ Calibrations :
       EW : "already_calibrated"
       NS : "already_calibrated"
       UD : "already_calibrated"
+
+  "E056" : 
+    "RADIAN" : 
+      EW : "already_calibrated"
+      NS : "already_calibrated"
+      UD : "already_calibrated"
