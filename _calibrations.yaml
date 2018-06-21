@@ -122,6 +122,12 @@ Calibrations :
     NS : "already_calibrated" #north-south
     UD : "already_calibrated" #up-down/vertical
 
+  # Nanometrics TitanEA3-5 (S/N 000646)
+  "000646" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
   # Nanometrics TitanEA3-5 (S/N 000647)
   "000647" : #acceleration
     EW : "already_calibrated" #east-west
@@ -136,6 +142,18 @@ Calibrations :
 
   # Nanometrics TitanEA3-5 (S/N 000143)
   "000143" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Nanometrics TitanEA3-5 (S/N 000787) ############# currently a spare
+  "000787" : #acceleration
+    EW : "already_calibrated" #east-west
+    NS : "already_calibrated" #north-south
+    UD : "already_calibrated" #up-down/vertical
+
+  # Nanometrics TitanEA3-5 (S/N 000788)
+  "000788" : #acceleration
     EW : "already_calibrated" #east-west
     NS : "already_calibrated" #north-south
     UD : "already_calibrated" #up-down/vertical
@@ -199,6 +217,11 @@ Calibrations :
       UD : "already_calibrated" #up-down/vertical
 
   #Nanometrics Centaurs !@# Set to "1", because all that is needed is the standard coefficients from NRL.
+  "646" :
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
   "647" :
     "TitanEA3_5" : 
       EW : "already_calibrated" #east-west
@@ -210,6 +233,16 @@ Calibrations :
       NS : "already_calibrated" #north-south
       UD : "already_calibrated" #up-down/vertical
   "143" :
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "787" : #currently a spare
+    "TitanEA3_5" : 
+      EW : "already_calibrated" #east-west
+      NS : "already_calibrated" #north-south
+      UD : "already_calibrated" #up-down/vertical
+  "788" :
     "TitanEA3_5" : 
       EW : "already_calibrated" #east-west
       NS : "already_calibrated" #north-south

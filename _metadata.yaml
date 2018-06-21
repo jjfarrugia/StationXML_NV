@@ -895,6 +895,39 @@
         _description : "Station NC27 is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" :
 
+          "2018-06-19T00:00:00.000000Z_None" : 
+            Channels : 
+
+              "HNE" : &CORK1027_TitanEA_Channel #titan
+                _location_code : "W1"
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Nanometrics TitanEA (S/N 000788) deployed at the Cascadia Basin CORK 1027 site."
+                  - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "000788"
+                  - "788"
+                _sensor_keys : "RESP.XX.NS128..BNZ.Titan.DC_430.20V.2G" 
+                _datalogger_keys : "RESP.XX.NN429..HHZ.CENTAUR.1.200.OFF"
+                _sensor_type : "TitanEA3_5"
+                _sensor_description : "Nanometrics TitanEA Accelerograph 2g/Built-in datalogger"
+                _dataSearchURL :  "None"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24433"
+                _calibration_units : "UNKNOWN"
+              "HNN" : 
+                <<: *CORK1027_TitanEA_Channel #re-use parameters from East channel setup; changing unique characteristics
+                _azimuth : 0
+              "HNZ" :
+                <<: *CORK1027_TitanEA_Channel
+                _azimuth : 0
+                _dip : -90
+
+
           "2009-09-14T00:00:00.000000Z_2010-06-10T17:42:59.000000Z" :
             Channels : #100 and 2 Hz
 
@@ -1520,6 +1553,38 @@
         _geology : ""
         _description : "Station NCBC is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
         "Epoch" : 
+
+          "2018-06-19T00:00:00.000000Z_None" : 
+            Channels : 
+
+              "HNE" : &BarkleyUppSlope_TitanEA_Channel #titan
+                _location_code : "W1"
+                _azimuth : 90
+                _dip : 0
+                _depth : 0
+                _sample_rate : 200
+                _types : 
+                  - "GEOPHYSICAL"
+                _equipment_description : #order should be: [sensor, data_logger]
+                  - "Nanometrics TitanEA (S/N 000788) deployed at the Barkley Upper Slope site."
+                  - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
+                _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
+                  - "000646"
+                  - "646"
+                _sensor_keys : "RESP.XX.NS128..BNZ.Titan.DC_430.20V.2G" 
+                _datalogger_keys : "RESP.XX.NN429..HHZ.CENTAUR.1.200.OFF"
+                _sensor_type : "TitanEA3_5"
+                _sensor_description : "Nanometrics TitanEA Accelerograph 2g/Built-in datalogger"
+                _dataSearchURL :  "https://data.oceannetworks.ca/DataSearch?location=NCBC&deviceCategory=ACCELEROMETER"
+                _deviceURL : "http://data.oceannetworks.ca/DeviceListing?DeviceId=24074"
+                _calibration_units : "UNKNOWN"
+              "HNN" : 
+                <<: *BarkleyUppSlope_TitanEA_Channel #re-use parameters from East channel setup; changing unique characteristics
+                _azimuth : 0
+              "HNZ" :
+                <<: *BarkleyUppSlope_TitanEA_Channel
+                _azimuth : 0
+                _dip : -90
 
           "2009-09-07T00:00:00.000000Z_2010-09-11T01:14:00.000000Z" :
             Channels : #100 and 2 Hz
