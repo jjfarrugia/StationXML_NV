@@ -3,7 +3,7 @@
   <Source>Joseph Farrugia, Ocean Networks Canada</Source>
   <Module>ObsPy 1.1.0</Module>
   <ModuleURI>https://www.obspy.org</ModuleURI>
-  <Created>2018-06-19T14:48:16.197170</Created>
+  <Created>2018-06-25T08:12:01.749987</Created>
   <Network code="NV" startDate="2007-01-01T00:00:00">
     <Station code="KEMF">
       <Latitude unit="DEGREES">1.0</Latitude>
@@ -21,7 +21,7 @@
         <SampleRate>100.0</SampleRate>
         <Response>
           <InstrumentSensitivity>
-            <Value>160819.66836438014</Value>
+            <Value>1671.0950294575541</Value>
             <Frequency>125.0</Frequency>
             <InputUnits>
               <Name>M/S**2</Name>
@@ -52,7 +52,7 @@
               <Correction>0.0</Correction>
             </Decimation>
             <StageGain>
-              <Value>160819.67213114756</Value>
+              <Value>1671.0950685984526</Value>
               <Frequency>0.0</Frequency>
             </StageGain>
           </Stage>
