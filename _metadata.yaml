@@ -374,9 +374,9 @@
       "KEMF" :
         From : "2010-09-30T00:00:00.000000Z"
         To : "None"
-        _latitude : 47.9737
-        _longitude : -129.0818
-        _elevation : -2154.0 #meters
+        _latitude : 47.948572
+        _longitude : -129.098661
+        _elevation : -2191.0 #meters
         _site : "Endeavour Main Field"
         _geology : ""
         _description : "Station KEMF is part of the Neptune ocean-floor cabled observatory in the northeast Pacific Ocean, owned and operated by Ocean Networks Canada."
@@ -1566,7 +1566,7 @@
                 _types : 
                   - "GEOPHYSICAL"
                 _equipment_description : #order should be: [sensor, data_logger]
-                  - "Nanometrics TitanEA (S/N 000788) deployed at the Barkley Upper Slope site."
+                  - "Nanometrics TitanEA (S/N 000788) deployed at the Barkley Upper Slope South site."
                   - "The dataloggers in the Titan SMA digital accelerometers are Centaur dataloggers with a single preamp gain choice of 1 (40 Vpp)."
                 _equipment_serial : #must be same length as description; order should be: [sensor, data_logger]
                   - "000646"

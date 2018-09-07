@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.0">
+  <Source>Joseph Farrugia, Ocean Networks Canada</Source>
+  <Module>ObsPy 1.1.0</Module>
+  <ModuleURI>https://www.obspy.org</ModuleURI>
+  <Created>2018-08-16T08:42:57.694303</Created>
+  <Network code="NV" startDate="2007-01-01T00:00:00">
+    <Station code="BACND">
+      <Latitude unit="DEGREES">1.0</Latitude>
+      <Longitude unit="DEGREES">2.0</Longitude>
+      <Elevation unit="METERS">3.0</Elevation>
+      <Site>
+        <Name>site</Name>
+      </Site>
+      <CreationDate>2007-01-01T00:00:00</CreationDate>
+      <Channel code="MDD" locationCode="" startDate="2007-01-01T00:00:00">
+        <Latitude unit="DEGREES">1.0</Latitude>
+        <Longitude unit="DEGREES">2.0</Longitude>
+        <Elevation unit="METERS">3.0</Elevation>
+        <Depth unit="METERS">4.0</Depth>
+        <Response>
+          <InstrumentSensitivity>
+            <Value>50.0</Value>
+            <Frequency>1.0</Frequency>
+            <InputUnits>
+              <Name>PASCALS</Name>
+              <Description>None</Description>
+            </InputUnits>
+            <OutputUnits>
+              <Name>COUNTS</Name>
+              <Description>None</Description>
+            </OutputUnits>
+          </InstrumentSensitivity>
+          <Stage number="1">
+            <Coefficients>
+              <InputUnits>
+                <Name>PASCALS</Name>
+              </InputUnits>
+              <OutputUnits>
+                <Name>COUNTS</Name>
+              </OutputUnits>
+              <CfTransferFunctionType>DIGITAL</CfTransferFunctionType>
+              <Numerator>1.0</Numerator>
+              <Denominator>1.0</Denominator>
+            </Coefficients>
+            <Decimation>
+              <InputSampleRate unit="HERTZ">5.0</InputSampleRate>
+              <Factor>1</Factor>
+              <Offset>0</Offset>
+              <Delay>0.0</Delay>
+              <Correction>0.0</Correction>
+            </Decimation>
+            <StageGain>
+              <Value>50.0</Value>
+              <Frequency>1.0</Frequency>
+            </StageGain>
+          </Stage>
+        </Response>
+      </Channel>
+    </Station>
+  </Network>
+</FDSNStationXML>
